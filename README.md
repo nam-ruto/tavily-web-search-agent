@@ -16,23 +16,34 @@ This project implements a small, purely-Python iterative web-retrieval RAG-style
 
 ### Project Layout
 
-- `main.py` – CLI entry point and orchestration loop
-- `web_retriever.py` – Tavily web search + page fetching and extraction
-- `context_builder.py` – document chunking, ranking, and selection
-- `evaluator.py` – heuristic context sufficiency evaluator + query refinement
-- `answerer.py` – builds a context pack and returns an answer with citations
-- `types.py` – shared data classes used across modules
+The project follows a modern `src` layout for better modularity and package management.
+
+```text
+tavily_agent/
+├── src/
+│   ├── __init__.py
+│   ├── cli.py               # CLI entry point
+│   ├── pipeline.py          # Orchestration loop
+│   ├── models.py            # Shared data classes
+│   ├── agents/
+│   │   ├── answerer.py      # LLM-based answering logic
+│   │   └── evaluator.py     # Context sufficiency evaluation
+│   ├── services/
+│   │   └── web_search.py    # Tavily API & web fetching
+│   └── processing/
+│       └── text.py          # Chunking & ranking
+├── tests/                       # Unit and integration tests
+├── main.py                      # Root convenience script
+├── pyproject.toml               # Package configuration
+├── tavily_rag_agent.egg-info/   # Metadata
+└── README.md
+```
 
 ### Setup with uv
 
 From the project root:
 
 ```bash
-cd "/Users/namhoang/Documents/2. Coding-space/ISODS/tavily_agent"
-
-# (optional) ensure uv is installed
-uv --version
-
 # create a virtual environment and install dependencies
 uv venv
 uv sync
@@ -46,18 +57,16 @@ export TAVILY_API_KEY="your-api-key-here"
 
 ### Running the CLI
 
-You can run the pipeline directly with uv:
+You can run the pipeline directly using `uv`:
 
 ```bash
 uv run python main.py --question "What is Tavily and how does it work?"
 ```
 
-or rely on the installed script name (after `uv sync`):
+Or use the installed entry point:
 
 ```bash
 uv run tavily-rag --question "Latest overview of retrieval-augmented generation in 2025"
 ```
 
 If `--question` is omitted, the program will prompt you for one on stdin.
-
-
