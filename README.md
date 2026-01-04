@@ -5,14 +5,21 @@ This project implements a small, purely-Python iterative web-retrieval RAG-style
 ### Features
 
 - **Iterative search loop** with a configurable maximum number of iterations (default: 3)
-- **Tavily web search** to fetch fresh results
+- **Tavily web search** to fetch fresh, AI-optimized search results
 - **HTML fetching and text extraction** for each result URL
 - **Passage chunking and TF-IDF ranking** for relevance
-- **Heuristic context evaluation** to decide if more search is needed
-- **Caching** so the same URL is not fetched twice in a run
+- **LLM-powered context evaluation** using Ollama to decide if more search is needed
+- **Automatic query refinement** to fill information gaps
 - **Passage deduplication** using text hashing
 - **Simple token/length budgeting** for the final context
-- **Placeholder answering** that summarizes top passages and returns citations (URLs)
+- **Grounded answering** with inline citations using Ollama models
+
+### Core Technologies
+
+| Technology | Role in Project |
+| :--- | :--- |
+| **[Tavily](https://tavily.com/)** | **The "Eyes"**: Acts as the primary web retrieval engine. It provides AI-optimized search results, snippets, and relevancy scores to find the most up-to-date information on the live internet. |
+| **[Ollama](https://ollama.com/)** | **The "Brain"**: Powers the reasoning steps. It runs local LLMs (like `gemma3`) to evaluate if the current search results are sufficient and to synthesize the final answer with proper citations. |
 
 ### Project Layout
 

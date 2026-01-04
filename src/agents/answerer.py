@@ -4,6 +4,7 @@ import logging
 from typing import List
 
 from models import Passage
+from services.ollama_service import get_answer_from_llm, chat_completion
 
 logger = logging.getLogger(__name__)
 
@@ -12,16 +13,6 @@ def _shorten(text: str, max_chars: int = 400) -> str:
     if len(text) <= max_chars:
         return text
     return text[: max_chars - 3] + "..."
-
-
-def _first_sentences(text: str, max_sentences: int = 2) -> str:
-    # Very naive sentence splitting.
-    parts = text.split(".")
-    sentences = [p.strip() for p in parts if p.strip()]
-    joined = ". ".join(sentences[:max_sentences])
-    if joined and not joined.endswith("."):
-        joined += "."
-    return joined
 
 
 def build_context_pack(passages: List[Passage]) -> str:
@@ -38,9 +29,9 @@ def build_context_pack(passages: List[Passage]) -> str:
     return "\n".join(lines)
 
 
-def answer(question: str, passages: List[Passage]) -> str:
+def answer(question: str, passages: List[Passage], model: str = "gemma3:latest") -> str:
     """
-    Placeholder answerer that summarizes top passages and returns citations.
+    Generate an answer using Ollama based on the retrieved passages.
     """
     if not passages:
         logger.info("No passages provided to answerer; returning fallback answer.")
@@ -49,26 +40,21 @@ def answer(question: str, passages: List[Passage]) -> str:
             "question in a grounded way."
         )
 
-    logger.info("Building answer from %d passages", len(passages))
+    logger.info("Building answer from %d passages using Ollama (%s)", len(passages), model)
 
-    # Build a lightweight summary from the top passages.
-    summary_points: List[str] = []
-    for p in passages[:5]:
-        snippet = _first_sentences(p.text, max_sentences=2)
-        if snippet:
-            summary_points.append(f"- {snippet}")
-
-    sources_lines = [f"[{i+1}] {p.url}" for i, p in enumerate(passages)]
-
-    answer_text = [
-        f"Question: {question}",
-        "",
-        "Based on the retrieved web context, here is a synthesized answer:",
-        "",
-        *summary_points,
-        "",
-        "Sources:",
-        *sources_lines,
-    ]
-
-    return "\n".join(answer_text)
+    # Build the context string
+    context = build_context_pack(passages)
+    
+    try:
+        # Generate answer from LLM
+        answer_text = get_answer_from_llm(question, context, model=model)
+        
+        # Append sources for transparency
+        sources_lines = [f"- [{i+1}] {p.url}" for i, p in enumerate(passages)]
+        sources_block = "\n".join(sources_lines)
+        
+        return f"{answer_text}\n\n### Sources\n{sources_block}"
+        
+    except Exception as e:
+        logger.error(f"Failed to get answer from Ollama: {e}")
+        return "Sorry, I encountered an error while processing the answer with the LLM."

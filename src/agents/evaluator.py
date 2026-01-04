@@ -1,32 +1,19 @@
 from __future__ import annotations
 
 import logging
+import json
 from typing import List
 from urllib.parse import urlparse
 
 from models import Passage, EvaluationResult
+from services.ollama_service import chat_completion
 
 logger = logging.getLogger(__name__)
 
 
-SIMILARITY_THRESHOLD = 0.22
-MIN_PASSAGES = 3
-MIN_UNIQUE_DOMAINS = 2
-
-
-def _extract_domain(url: str) -> str:
-    parsed = urlparse(url)
-    return parsed.netloc or url
-
-
-def evaluate_context(question: str, passages: List[Passage]) -> EvaluationResult:
+def evaluate_context(question: str, passages: List[Passage], model: str = "gemma3:latest") -> EvaluationResult:
     """
-    Heuristic evaluator, no LLM involved.
-
-    Sufficient if:
-      - at least 3 passages
-      - at least 2 unique domains
-      - top passage similarity score >= SIMILARITY_THRESHOLD
+    Evaluate context sufficiency using Ollama.
     """
     if not passages:
         rationale = "No passages available yet; context clearly insufficient."
@@ -34,104 +21,96 @@ def evaluate_context(question: str, passages: List[Passage]) -> EvaluationResult
         return EvaluationResult(
             sufficient=False,
             rationale=rationale,
-            new_queries=_generate_refined_queries(question, passages),
+            new_queries=_generate_refined_queries_heuristic(question, passages),
             missing_aspects=["No relevant documents retrieved"],
         )
 
+    logger.info("Evaluating context sufficiency using Ollama (%s)", model)
+
+    # Build context for evaluation
+    context_lines = []
+    for idx, p in enumerate(passages, start=1):
+        context_lines.append(f"[{idx}] {p.title}: {p.text[:300]}...")
+    context_str = "\n".join(context_lines)
+
+    system_prompt = """
+        You are an expert researcher evaluating search results. 
+        Determine if the provided context is sufficient to answer the user's question accurately and comprehensively. 
+        You MUST respond with a valid JSON object with the following structure:
+        {
+        "sufficient": boolean,
+        "rationale": "a brief explanation of why the context is or isn't sufficient",
+        "new_queries": ["a list of 2-3 specific search queries to fill gaps, if not sufficient"],
+        "missing_aspects": ["list of what information is still missing"]
+        }
+        Keep new_queries focused and diverse.
+        """
+
+    user_prompt = f"Question: {question}\n\nContext:\n{context_str}"
+
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt}
+    ]
+
+    try:
+        response_text = chat_completion(
+            model=model,
+            messages=messages,
+            format="json"
+        )
+        
+        logger.debug("Raw Ollama evaluation response: %r", response_text)
+        
+        # Parse JSON response
+        data = json.loads(response_text)
+        
+        return EvaluationResult(
+            sufficient=data.get("sufficient", False),
+            rationale=data.get("rationale", "No rationale provided."),
+            new_queries=data.get("new_queries", []),
+            missing_aspects=data.get("missing_aspects", [])
+        )
+
+    except Exception as e:
+        logger.error(f"Ollama evaluation failed: {e}. Raw response: {response_text if 'response_text' in locals() else 'N/A'}. Falling back to heuristic.")
+        # Fallback to heuristic
+        return _evaluate_heuristic(question, passages)
+
+
+def _evaluate_heuristic(question: str, passages: List[Passage]) -> EvaluationResult:
+    """
+    Heuristic evaluator fallback.
+    """
     top_score = passages[0].rank_score or 0.0
-    unique_domains = {_extract_domain(p.url) for p in passages}
+    unique_domains = {urlparse(p.url).netloc for p in passages}
 
     sufficient = (
-        len(passages) >= MIN_PASSAGES
-        and len(unique_domains) >= MIN_UNIQUE_DOMAINS
-        and top_score >= SIMILARITY_THRESHOLD
+        len(passages) >= 3
+        and len(unique_domains) >= 2
+        and top_score >= 0.22
     )
 
     if sufficient:
-        rationale = (
-            f"Sufficient context: {len(passages)} passages from "
-            f"{len(unique_domains)} domains; top similarity={top_score:.3f}."
-        )
-        logger.info(rationale)
         return EvaluationResult(
             sufficient=True,
-            rationale=rationale,
+            rationale="Heuristic: sufficient passages and domains.",
             new_queries=[],
-            missing_aspects=[],
+            missing_aspects=[]
         )
-
-    missing: List[str] = []
-    if len(passages) < MIN_PASSAGES:
-        missing.append(f"Need at least {MIN_PASSAGES} passages (have {len(passages)})")
-    if len(unique_domains) < MIN_UNIQUE_DOMAINS:
-        missing.append(
-            f"Need at least {MIN_UNIQUE_DOMAINS} unique domains "
-            f"(have {len(unique_domains)})"
-        )
-    if top_score < SIMILARITY_THRESHOLD:
-        missing.append(
-            f"Top passage similarity below threshold "
-            f"({top_score:.3f} < {SIMILARITY_THRESHOLD:.2f})"
-        )
-
-    rationale = "Context likely insufficient: " + "; ".join(missing)
-    logger.info(rationale)
-
+    
     return EvaluationResult(
         sufficient=False,
-        rationale=rationale,
-        new_queries=_generate_refined_queries(question, passages),
-        missing_aspects=missing,
+        rationale="Heuristic: insufficient passages, domains, or score.",
+        new_queries=_generate_refined_queries_heuristic(question, passages),
+        missing_aspects=["Heuristic check failed"]
     )
 
 
-def _generate_refined_queries(question: str, passages: List[Passage]) -> List[str]:
+def _generate_refined_queries_heuristic(question: str, passages: List[Passage]) -> List[str]:
     """
-    Generate 2–4 refined queries using simple heuristics.
+    Generate refined queries using simple heuristics (renamed from original).
     """
     base = question.strip()
-    refined: List[str] = [
-        f"{base} official documentation",
-        f"{base} specification",
-        f"{base} 2025",
-    ]
-
-    # Optionally enrich with a few keywords from the top passages.
-    if passages:
-        top_text = " ".join(p.text for p in passages[:3])
-        keywords = _extract_keywords_from_text(top_text, limit=4)
-        if keywords:
-            refined.append(f"{base} {' '.join(keywords)}")
-
-    # Deduplicate while preserving order
-    seen: set[str] = set()
-    unique_refined: List[str] = []
-    for q in refined:
-        if q not in seen:
-            seen.add(q)
-            unique_refined.append(q)
-
-    logger.info("Generated %d refined queries", len(unique_refined))
-    return unique_refined
-
-
-def _extract_keywords_from_text(text: str, limit: int = 4) -> List[str]:
-    """
-    Very light-weight keyword extractor: pick distinct longer words.
-    """
-    words = text.split()
-    candidates: List[str] = []
-    seen: set[str] = set()
-
-    for w in words:
-        token = "".join(ch for ch in w.lower() if ch.isalnum())
-        if len(token) <= 4:
-            continue
-        if token in seen:
-            continue
-        seen.add(token)
-        candidates.append(token)
-        if len(candidates) >= limit:
-            break
-
-    return candidates
+    refined = [f"{base} official documentation", f"{base} detailed explanation"]
+    return refined

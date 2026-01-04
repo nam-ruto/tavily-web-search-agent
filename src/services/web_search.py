@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 import os
 from datetime import datetime
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import requests
 from bs4 import BeautifulSoup
@@ -95,6 +95,7 @@ def fetch_documents(
     results: List[SearchResult],
     url_cache: Dict[str, Document],
     timeout: float = 10.0,
+    progress_callback: Optional[callable] = None,
 ) -> List[Document]:
     """
     Fetch and extract documents for the given search results, with simple in-memory caching.
@@ -110,6 +111,9 @@ def fetch_documents(
             continue
 
         try:
+            if progress_callback:
+                progress_callback(f"Fetching: [blue]{res.url}[/blue]")
+            
             logger.info("Fetching URL: %s", res.url)
             resp = requests.get(
                 res.url,

@@ -1,0 +1,1134 @@
+2026-01-03 23:20:29,060 [INFO] pipeline: Starting pipeline for question: What is the latest result in the game between Manchester United and Wolves? using model: gemma3:latest
+2026-01-03 23:20:29,064 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:20:29,064 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?']
+2026-01-03 23:20:29,065 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?' (max_results=6)
+2026-01-03 23:20:31,314 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:20:31,314 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/report/_/gameId/740782
+2026-01-03 23:20:31,766 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/report/_/gameId/740782 (words=995)
+2026-01-03 23:20:31,766 [INFO] services.web_search: Fetching URL: https://www.thesun.co.uk/sport/37764485/man-utd-vs-wolves-live-score-result-premier-league-latest-updates/
+2026-01-03 23:20:32,302 [INFO] services.web_search: Fetched and extracted document from https://www.thesun.co.uk/sport/37764485/man-utd-vs-wolves-live-score-result-premier-league-latest-updates/ (words=195)
+2026-01-03 23:20:32,302 [INFO] services.web_search: Fetching URL: https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/
+2026-01-03 23:20:33,366 [INFO] services.web_search: Fetched and extracted document from https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/ (words=936)
+2026-01-03 23:20:33,366 [INFO] services.web_search: Fetching URL: https://www.bbc.com/sport/football/live/c24609jld9rt
+2026-01-03 23:20:34,491 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/sport/football/live/c24609jld9rt (words=4965)
+2026-01-03 23:20:34,491 [INFO] services.web_search: Fetching URL: https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/
+2026-01-03 23:20:35,500 [INFO] services.web_search: Fetched and extracted document from https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/ (words=17)
+2026-01-03 23:20:35,500 [INFO] services.web_search: Fetching URL: https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis
+2026-01-03 23:20:35,766 [INFO] services.web_search: Fetched and extracted document from https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis (words=1099)
+2026-01-03 23:20:35,766 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-03 23:20:35,767 [INFO] processing.text: Chunked 6 documents into 23 passages
+2026-01-03 23:20:35,771 [INFO] processing.text: Ranked 23 passages by relevance to the question
+2026-01-03 23:20:35,771 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=7486)
+2026-01-03 23:20:35,771 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:20:35,771 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:20:44,946 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:20:44,947 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:20:44,948 [INFO] pipeline: Evaluation: Heuristic: sufficient passages and domains.
+2026-01-03 23:20:44,949 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-03 23:20:44,953 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-03 23:20:44,953 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:20:48,042 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:20:48,044 [INFO] pipeline: Pipeline finished.
+2026-01-03 23:23:07,718 [INFO] pipeline: Starting pipeline for question: What is the latest result in the game between Manchester United and Wolves? using model: gemma3:latest
+2026-01-03 23:23:07,724 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:23:07,724 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?']
+2026-01-03 23:23:07,725 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?' (max_results=6)
+2026-01-03 23:23:09,453 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:23:09,454 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/report/_/gameId/740782
+2026-01-03 23:23:09,872 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/report/_/gameId/740782 (words=995)
+2026-01-03 23:23:09,872 [INFO] services.web_search: Fetching URL: https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/
+2026-01-03 23:23:11,242 [INFO] services.web_search: Fetched and extracted document from https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/ (words=936)
+2026-01-03 23:23:11,242 [INFO] services.web_search: Fetching URL: https://www.bbc.com/sport/football/live/c24609jld9rt
+2026-01-03 23:23:11,635 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/sport/football/live/c24609jld9rt (words=4965)
+2026-01-03 23:23:11,635 [INFO] services.web_search: Fetching URL: https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/
+2026-01-03 23:23:12,149 [INFO] services.web_search: Fetched and extracted document from https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/ (words=17)
+2026-01-03 23:23:12,149 [INFO] services.web_search: Fetching URL: https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis
+2026-01-03 23:23:12,460 [INFO] services.web_search: Fetched and extracted document from https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis (words=1099)
+2026-01-03 23:23:12,460 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=gHl2g0CueGg
+2026-01-03 23:23:13,238 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=gHl2g0CueGg (words=41)
+2026-01-03 23:23:13,238 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-03 23:23:13,241 [INFO] processing.text: Chunked 6 documents into 22 passages
+2026-01-03 23:23:13,251 [INFO] processing.text: Ranked 22 passages by relevance to the question
+2026-01-03 23:23:13,251 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=7486)
+2026-01-03 23:23:13,251 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:23:13,251 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:23:20,927 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:23:20,927 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:23:20,928 [INFO] pipeline: Evaluation: Heuristic: sufficient passages and domains.
+2026-01-03 23:23:20,929 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-03 23:23:20,935 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-03 23:23:20,935 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:23:24,074 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:23:24,075 [INFO] pipeline: Pipeline finished.
+2026-01-03 23:26:50,234 [INFO] pipeline: Starting pipeline for question: What is the latest result in the game between Manchester United and Wolves? using model: gemma3:latest
+2026-01-03 23:26:50,239 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:26:50,240 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?']
+2026-01-03 23:26:50,240 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?' (max_results=6)
+2026-01-03 23:26:51,626 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:26:51,626 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/report/_/gameId/740782
+2026-01-03 23:26:51,911 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/report/_/gameId/740782 (words=995)
+2026-01-03 23:26:51,911 [INFO] services.web_search: Fetching URL: https://www.thesun.co.uk/sport/37764485/man-utd-vs-wolves-live-score-result-premier-league-latest-updates/
+2026-01-03 23:26:52,465 [INFO] services.web_search: Fetched and extracted document from https://www.thesun.co.uk/sport/37764485/man-utd-vs-wolves-live-score-result-premier-league-latest-updates/ (words=195)
+2026-01-03 23:26:52,465 [INFO] services.web_search: Fetching URL: https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/
+2026-01-03 23:26:53,689 [INFO] services.web_search: Fetched and extracted document from https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/ (words=936)
+2026-01-03 23:26:53,689 [INFO] services.web_search: Fetching URL: https://www.bbc.com/sport/football/live/c24609jld9rt
+2026-01-03 23:26:54,272 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/sport/football/live/c24609jld9rt (words=4965)
+2026-01-03 23:26:54,272 [INFO] services.web_search: Fetching URL: https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/
+2026-01-03 23:26:55,013 [INFO] services.web_search: Fetched and extracted document from https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/ (words=17)
+2026-01-03 23:26:55,013 [INFO] services.web_search: Fetching URL: https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis
+2026-01-03 23:26:55,288 [INFO] services.web_search: Fetched and extracted document from https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis (words=1099)
+2026-01-03 23:26:55,288 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-03 23:26:55,289 [INFO] processing.text: Chunked 6 documents into 23 passages
+2026-01-03 23:26:55,294 [INFO] processing.text: Ranked 23 passages by relevance to the question
+2026-01-03 23:26:55,294 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=7486)
+2026-01-03 23:26:55,294 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:26:55,294 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:27:02,837 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:27:02,838 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:27:02,839 [INFO] pipeline: Evaluation: Heuristic: sufficient passages and domains.
+2026-01-03 23:27:02,840 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-03 23:27:02,843 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-03 23:27:02,843 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:27:05,893 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:27:05,895 [INFO] pipeline: Pipeline finished.
+2026-01-03 23:28:20,223 [INFO] pipeline: Starting pipeline for question: What is the weather like in Troy Alabama today? using model: gemma3:latest
+2026-01-03 23:28:20,228 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:28:20,228 [INFO] pipeline: Queries this iteration: ['What is the weather like in Troy Alabama today?']
+2026-01-03 23:28:20,229 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like in Troy Alabama today?' (max_results=6)
+2026-01-03 23:28:21,826 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:28:21,826 [INFO] services.web_search: Fetching URL: https://www.weatherapi.com/
+2026-01-03 23:28:22,738 [INFO] services.web_search: Fetched and extracted document from https://www.weatherapi.com/ (words=4482)
+2026-01-03 23:28:22,739 [INFO] services.web_search: Fetching URL: https://www.weather-atlas.com/en/alabama-usa/troy-weather-april
+2026-01-03 23:28:23,128 [INFO] services.web_search: Fetched and extracted document from https://www.weather-atlas.com/en/alabama-usa/troy-weather-april (words=1417)
+2026-01-03 23:28:23,128 [INFO] services.web_search: Fetching URL: https://forecast.weather.gov/zipcity.php?inputstring=Troy,AL&Go2=Go
+2026-01-03 23:28:24,354 [INFO] services.web_search: Fetched and extracted document from https://forecast.weather.gov/zipcity.php?inputstring=Troy,AL&Go2=Go (words=529)
+2026-01-03 23:28:24,354 [INFO] services.web_search: Fetching URL: https://weather.com/weather/monthly/l/Troy+AL?canonicalCityId=45ffb680ca2f026eb60192a6ffce873fb38ce3fcd995ab7450fa96c62d71140f
+2026-01-03 23:28:26,225 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/monthly/l/Troy+AL?canonicalCityId=45ffb680ca2f026eb60192a6ffce873fb38ce3fcd995ab7450fa96c62d71140f (words=641)
+2026-01-03 23:28:26,225 [INFO] services.web_search: Fetching URL: https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652
+2026-01-03 23:28:26,402 [WARNING] services.web_search: Non-200 or empty response for URL https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652 (status 403)
+2026-01-03 23:28:26,402 [INFO] services.web_search: Fetching URL: https://www.timeanddate.com/weather/@4094163/ext
+2026-01-03 23:28:26,951 [INFO] services.web_search: Fetched and extracted document from https://www.timeanddate.com/weather/@4094163/ext (words=439)
+2026-01-03 23:28:26,951 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:28:26,953 [INFO] processing.text: Chunked 5 documents into 21 passages
+2026-01-03 23:28:26,962 [INFO] processing.text: Ranked 21 passages by relevance to the question
+2026-01-03 23:28:26,963 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=4809)
+2026-01-03 23:28:26,963 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:28:26,963 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:28:32,710 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:28:32,710 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:28:32,710 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:28:32,711 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-03 23:28:32,711 [INFO] pipeline: Queries this iteration: ['What is the weather like in Troy Alabama today? official documentation', 'What is the weather like in Troy Alabama today? detailed explanation']
+2026-01-03 23:28:32,711 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like in Troy Alabama today? official documentation' (max_results=6)
+2026-01-03 23:28:34,336 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:28:34,339 [INFO] services.web_search: Fetching URL: https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652
+2026-01-03 23:28:34,512 [WARNING] services.web_search: Non-200 or empty response for URL https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652 (status 403)
+2026-01-03 23:28:34,512 [INFO] services.web_search: Fetching URL: https://weather.com/weather/today/l/36082
+2026-01-03 23:28:34,915 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/today/l/36082 (words=745)
+2026-01-03 23:28:34,915 [INFO] services.web_search: Fetching URL: https://www.predictwind.com/weather/united-states/alabama/troy
+2026-01-03 23:28:35,488 [INFO] services.web_search: Fetched and extracted document from https://www.predictwind.com/weather/united-states/alabama/troy (words=602)
+2026-01-03 23:28:35,488 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/forecast/AL/Troy
+2026-01-03 23:28:35,814 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/forecast/AL/Troy (status 403)
+2026-01-03 23:28:35,814 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-03 23:28:35,816 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like in Troy Alabama today? detailed explanation' (max_results=6)
+2026-01-03 23:28:37,432 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:28:37,432 [INFO] services.web_search: Fetching URL: https://weather.com/weather/monthly/l/36082:4:US
+2026-01-03 23:28:38,547 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/monthly/l/36082:4:US (words=641)
+2026-01-03 23:28:38,547 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/longrange/al/Troy
+2026-01-03 23:28:38,762 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/longrange/al/Troy (status 403)
+2026-01-03 23:28:38,763 [INFO] services.web_search: Fetching URL: https://en.climate-data.org/north-america/united-states-of-america/alabama/troy-17508/t/january-1/
+2026-01-03 23:28:39,166 [INFO] services.web_search: Fetched and extracted document from https://en.climate-data.org/north-america/united-states-of-america/alabama/troy-17508/t/january-1/ (words=2688)
+2026-01-03 23:28:39,168 [INFO] services.web_search: Fetching URL: https://www.weather-atlas.com/en/alabama-usa/troy-weather-january
+2026-01-03 23:28:40,023 [INFO] services.web_search: Fetched and extracted document from https://www.weather-atlas.com/en/alabama-usa/troy-weather-january (words=1515)
+2026-01-03 23:28:40,024 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:28:40,026 [INFO] processing.text: Chunked 10 documents into 38 passages
+2026-01-03 23:28:40,034 [INFO] processing.text: Ranked 38 passages by relevance to the question
+2026-01-03 23:28:40,034 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=5615)
+2026-01-03 23:28:40,035 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:28:40,035 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:28:46,671 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:28:46,672 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:28:46,672 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:28:46,674 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-03 23:28:46,674 [INFO] pipeline: Queries this iteration: ['What is the weather like in Troy Alabama today? official documentation', 'What is the weather like in Troy Alabama today? detailed explanation']
+2026-01-03 23:28:46,675 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like in Troy Alabama today? official documentation' (max_results=6)
+2026-01-03 23:28:48,263 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:28:48,263 [INFO] services.web_search: Fetching URL: https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652
+2026-01-03 23:28:48,367 [WARNING] services.web_search: Non-200 or empty response for URL https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652 (status 403)
+2026-01-03 23:28:48,368 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/forecast/AL/Troy
+2026-01-03 23:28:48,552 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/forecast/AL/Troy (status 403)
+2026-01-03 23:28:48,552 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-03 23:28:48,554 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like in Troy Alabama today? detailed explanation' (max_results=6)
+2026-01-03 23:28:50,413 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:28:50,414 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/longrange/al/Troy
+2026-01-03 23:28:50,621 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/longrange/al/Troy (status 403)
+2026-01-03 23:28:50,621 [INFO] services.web_search: Fetching URL: https://weather.com/weather/monthly/l/Troy+Alabama+36081?canonicalCityId=ae3fd72a5a66fe1e1b098d30255f90b2
+2026-01-03 23:28:52,676 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/monthly/l/Troy+Alabama+36081?canonicalCityId=ae3fd72a5a66fe1e1b098d30255f90b2 (words=642)
+2026-01-03 23:28:52,676 [INFO] services.web_search: Fetching URL: https://weather.com/weather/today/l/4b0b8bfa4290354d49206a57aaecbc4c43a8798fe0dc25c80dedf98474241932
+2026-01-03 23:28:53,083 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/today/l/4b0b8bfa4290354d49206a57aaecbc4c43a8798fe0dc25c80dedf98474241932 (words=744)
+2026-01-03 23:28:53,083 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:28:53,084 [INFO] processing.text: Chunked 12 documents into 42 passages
+2026-01-03 23:28:53,091 [INFO] processing.text: Ranked 42 passages by relevance to the question
+2026-01-03 23:28:53,091 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=5615)
+2026-01-03 23:28:53,091 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:28:53,091 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:28:58,145 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:28:58,145 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:28:58,146 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:28:58,148 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-03 23:28:58,151 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-03 23:28:58,151 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:29:02,227 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:29:02,229 [INFO] pipeline: Pipeline finished.
+2026-01-03 23:29:27,186 [INFO] pipeline: Starting pipeline for question: What is the date today? using model: gemma3:latest
+2026-01-03 23:29:27,190 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:29:27,190 [INFO] pipeline: Queries this iteration: ['What is the date today?']
+2026-01-03 23:29:27,191 [INFO] services.web_search: Searching web with Tavily: 'What is the date today?' (max_results=6)
+2026-01-03 23:29:28,085 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:29:28,085 [INFO] services.web_search: Fetching URL: https://www.datetoday.net/
+2026-01-03 23:29:28,697 [INFO] services.web_search: Fetched and extracted document from https://www.datetoday.net/ (words=652)
+2026-01-03 23:29:28,698 [INFO] services.web_search: Fetching URL: https://www.inchcalculator.com/what-is-todays-date/
+2026-01-03 23:29:29,079 [INFO] services.web_search: Fetched and extracted document from https://www.inchcalculator.com/what-is-todays-date/ (words=903)
+2026-01-03 23:29:29,079 [INFO] services.web_search: Fetching URL: https://www.saturdaygift.com/todays-date/
+2026-01-03 23:29:30,432 [INFO] services.web_search: Fetched and extracted document from https://www.saturdaygift.com/todays-date/ (words=539)
+2026-01-03 23:29:30,433 [INFO] services.web_search: Fetching URL: https://isotropic.org/date/
+2026-01-03 23:29:30,821 [INFO] services.web_search: Fetched and extracted document from https://isotropic.org/date/ (words=114)
+2026-01-03 23:29:30,822 [INFO] services.web_search: Fetching URL: https://www.calendarr.com/united-states/
+2026-01-03 23:29:31,463 [INFO] services.web_search: Fetched and extracted document from https://www.calendarr.com/united-states/ (words=501)
+2026-01-03 23:29:31,463 [INFO] services.web_search: Fetching URL: https://www.rapidtables.com/tools/todays-date.html
+2026-01-03 23:29:31,822 [INFO] services.web_search: Fetched and extracted document from https://www.rapidtables.com/tools/todays-date.html (words=178)
+2026-01-03 23:29:31,823 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-03 23:29:31,826 [INFO] processing.text: Chunked 6 documents into 11 passages
+2026-01-03 23:29:31,831 [INFO] processing.text: Ranked 11 passages by relevance to the question
+2026-01-03 23:29:31,832 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=6831)
+2026-01-03 23:29:31,832 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:29:31,832 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:29:39,474 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:29:39,474 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:29:39,475 [INFO] pipeline: Evaluation: Heuristic: sufficient passages and domains.
+2026-01-03 23:29:39,476 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-03 23:29:39,480 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-03 23:29:39,480 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:29:44,114 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:29:44,115 [INFO] pipeline: Pipeline finished.
+2026-01-03 23:30:01,467 [INFO] pipeline: Starting pipeline for question: What is ISODS? using model: gemma3:latest
+2026-01-03 23:30:01,470 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:30:01,470 [INFO] pipeline: Queries this iteration: ['What is ISODS?']
+2026-01-03 23:30:01,470 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS?' (max_results=6)
+2026-01-03 23:30:02,749 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:30:02,750 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isodsvi/
+2026-01-03 23:30:03,145 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isodsvi/ (words=4)
+2026-01-03 23:30:03,145 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf
+2026-01-03 23:30:03,356 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf (status 403)
+2026-01-03 23:30:03,356 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/
+2026-01-03 23:30:03,700 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/ (words=9)
+2026-01-03 23:30:03,701 [INFO] services.web_search: Fetching URL: https://portal.isods.org/opportunities
+2026-01-03 23:30:04,699 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/opportunities (words=265)
+2026-01-03 23:30:04,699 [INFO] services.web_search: Fetching URL: https://portal.isods.org/
+2026-01-03 23:30:05,350 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/ (words=364)
+2026-01-03 23:30:05,350 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/company/isods
+2026-01-03 23:30:06,458 [INFO] services.web_search: Fetched and extracted document from https://www.linkedin.com/company/isods (words=1850)
+2026-01-03 23:30:06,458 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:30:06,459 [INFO] processing.text: Chunked 5 documents into 7 passages
+2026-01-03 23:30:06,462 [INFO] processing.text: Ranked 7 passages by relevance to the question
+2026-01-03 23:30:06,463 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=7006)
+2026-01-03 23:30:06,463 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:30:06,463 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:30:13,799 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:30:13,799 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:30:13,800 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:30:13,802 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-03 23:30:13,802 [INFO] pipeline: Queries this iteration: ['What is ISODS? official documentation', 'What is ISODS? detailed explanation']
+2026-01-03 23:30:13,803 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS? official documentation' (max_results=6)
+2026-01-03 23:30:14,943 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:30:14,943 [INFO] services.web_search: Fetching URL: https://documents.un.org/
+2026-01-03 23:30:15,297 [INFO] services.web_search: Fetched and extracted document from https://documents.un.org/ (words=15)
+2026-01-03 23:30:15,297 [INFO] services.web_search: Fetching URL: https://www.purestorage.com/knowledge/what-is-an-ods.html
+2026-01-03 23:30:16,051 [INFO] services.web_search: Fetched and extracted document from https://www.purestorage.com/knowledge/what-is-an-ods.html (words=1471)
+2026-01-03 23:30:16,051 [INFO] services.web_search: Fetching URL: https://www.adobe.com/uk/acrobat/resources/document-files/open-doc/ods.html
+2026-01-03 23:30:16,466 [INFO] services.web_search: Fetched and extracted document from https://www.adobe.com/uk/acrobat/resources/document-files/open-doc/ods.html (words=1303)
+2026-01-03 23:30:16,466 [INFO] services.web_search: Fetching URL: https://documents.un.org/assets/ods_help__latest.pdf
+2026-01-03 23:30:17,202 [INFO] services.web_search: Fetched and extracted document from https://documents.un.org/assets/ods_help__latest.pdf (words=90245)
+2026-01-03 23:30:17,202 [INFO] services.web_search: Fetching URL: https://www.adobe.com/acrobat/resources/document-files/ods-file.html
+2026-01-03 23:30:17,393 [INFO] services.web_search: Fetched and extracted document from https://www.adobe.com/acrobat/resources/document-files/ods-file.html (words=1341)
+2026-01-03 23:30:17,393 [INFO] services.web_search: Fetching URL: https://www2.census.gov/software/osds/osds-documentation.pdf
+2026-01-03 23:30:27,800 [WARNING] services.web_search: Error fetching URL https://www2.census.gov/software/osds/osds-documentation.pdf: HTTPSConnectionPool(host='www2.census.gov', port=443): Read timed out. (read timeout=10.0)
+2026-01-03 23:30:27,801 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:30:27,801 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS? detailed explanation' (max_results=6)
+2026-01-03 23:30:28,717 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:30:28,718 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm
+2026-01-03 23:30:29,043 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm (status 403)
+2026-01-03 23:30:29,043 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf
+2026-01-03 23:30:29,211 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf (status 403)
+2026-01-03 23:30:29,211 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/photos/-isods-14-assessments-when-an-exam-becomes-a-journey-to-discover-yourselfin-trad/1183202387185052/
+2026-01-03 23:30:29,602 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/photos/-isods-14-assessments-when-an-exam-becomes-a-journey-to-discover-yourselfin-trad/1183202387185052/ (words=1)
+2026-01-03 23:30:29,602 [INFO] services.web_search: Fetching URL: https://portal.isods.org/exams
+2026-01-03 23:30:30,475 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/exams (words=1101)
+2026-01-03 23:30:30,475 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-03 23:30:30,506 [INFO] processing.text: Chunked 12 documents into 248 passages
+2026-01-03 23:30:30,637 [INFO] processing.text: Ranked 248 passages by relevance to the question
+2026-01-03 23:30:30,638 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=7006)
+2026-01-03 23:30:30,638 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:30:30,638 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:30:38,819 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:30:38,820 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:30:38,820 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:30:38,820 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-03 23:30:38,820 [INFO] pipeline: Queries this iteration: ['What is ISODS? official documentation', 'What is ISODS? detailed explanation']
+2026-01-03 23:30:38,821 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS? official documentation' (max_results=6)
+2026-01-03 23:30:39,012 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:30:39,012 [INFO] services.web_search: Fetching URL: https://www2.census.gov/software/osds/osds-documentation.pdf
+2026-01-03 23:30:49,144 [WARNING] services.web_search: Error fetching URL https://www2.census.gov/software/osds/osds-documentation.pdf: HTTPSConnectionPool(host='www2.census.gov', port=443): Read timed out. (read timeout=10.0)
+2026-01-03 23:30:49,145 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:30:49,145 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS? detailed explanation' (max_results=6)
+2026-01-03 23:30:49,434 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:30:49,434 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm
+2026-01-03 23:30:49,596 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm (status 403)
+2026-01-03 23:30:49,597 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf
+2026-01-03 23:30:49,837 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf (status 403)
+2026-01-03 23:30:49,838 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-03 23:30:49,870 [INFO] processing.text: Chunked 12 documents into 248 passages
+2026-01-03 23:30:49,982 [INFO] processing.text: Ranked 248 passages by relevance to the question
+2026-01-03 23:30:49,982 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=7006)
+2026-01-03 23:30:49,982 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:30:49,982 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:30:57,589 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:30:57,590 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:30:57,591 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:30:57,592 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-03 23:30:57,595 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-03 23:30:57,595 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:31:00,163 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:31:00,165 [INFO] pipeline: Pipeline finished.
+2026-01-03 23:56:52,503 [INFO] pipeline: Starting pipeline for question: What is the weather like today at Troy AL? using model: gemma3:latest
+2026-01-03 23:56:52,508 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-03 23:56:52,508 [INFO] pipeline: Queries this iteration: ['What is the weather like today at Troy AL?']
+2026-01-03 23:56:52,509 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like today at Troy AL?' (max_results=6)
+2026-01-03 23:56:54,396 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:56:54,396 [INFO] services.web_search: Fetching URL: https://www.weatherapi.com/
+2026-01-03 23:56:55,731 [INFO] services.web_search: Fetched and extracted document from https://www.weatherapi.com/ (words=4482)
+2026-01-03 23:56:55,731 [INFO] services.web_search: Fetching URL: https://www.weather-atlas.com/en/alabama-usa/troy-weather-january
+2026-01-03 23:56:56,674 [INFO] services.web_search: Fetched and extracted document from https://www.weather-atlas.com/en/alabama-usa/troy-weather-january (words=1515)
+2026-01-03 23:56:56,674 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/longrange/al/Troy
+2026-01-03 23:56:57,030 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/longrange/al/Troy (status 403)
+2026-01-03 23:56:57,031 [INFO] services.web_search: Fetching URL: https://en.climate-data.org/north-america/united-states-of-america/alabama/troy-17508/t/january-1/
+2026-01-03 23:56:57,298 [INFO] services.web_search: Fetched and extracted document from https://en.climate-data.org/north-america/united-states-of-america/alabama/troy-17508/t/january-1/ (words=2688)
+2026-01-03 23:56:57,299 [INFO] services.web_search: Fetching URL: https://www.wunderground.com/weather/us/al/troy
+2026-01-03 23:56:58,826 [INFO] services.web_search: Fetched and extracted document from https://www.wunderground.com/weather/us/al/troy (words=431)
+2026-01-03 23:56:58,826 [INFO] services.web_search: Fetching URL: https://www.weatherstreet.com/weather-forecast/Troy-AL-36081.htm
+2026-01-03 23:56:59,151 [INFO] services.web_search: Fetched and extracted document from https://www.weatherstreet.com/weather-forecast/Troy-AL-36081.htm (words=3575)
+2026-01-03 23:56:59,151 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:56:59,154 [INFO] processing.text: Chunked 5 documents into 33 passages
+2026-01-03 23:56:59,166 [INFO] processing.text: Ranked 33 passages by relevance to the question
+2026-01-03 23:56:59,166 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=5615)
+2026-01-03 23:56:59,166 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:56:59,167 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:57:07,814 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:57:07,815 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:57:07,816 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:57:07,818 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-03 23:57:07,818 [INFO] pipeline: Queries this iteration: ['What is the weather like today at Troy AL? official documentation', 'What is the weather like today at Troy AL? detailed explanation']
+2026-01-03 23:57:07,819 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like today at Troy AL? official documentation' (max_results=6)
+2026-01-03 23:57:10,063 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:57:10,063 [INFO] services.web_search: Fetching URL: https://www.weather-atlas.com/en/alabama-usa/troy-weather-april
+2026-01-03 23:57:10,308 [INFO] services.web_search: Fetched and extracted document from https://www.weather-atlas.com/en/alabama-usa/troy-weather-april (words=1417)
+2026-01-03 23:57:10,309 [INFO] services.web_search: Fetching URL: https://forecast.weather.gov/zipcity.php?inputstring=Troy,AL&Go2=Go
+2026-01-03 23:57:11,777 [INFO] services.web_search: Fetched and extracted document from https://forecast.weather.gov/zipcity.php?inputstring=Troy,AL&Go2=Go (words=535)
+2026-01-03 23:57:11,777 [INFO] services.web_search: Fetching URL: https://www.accuweather.com/en/us/troy/36081/daily-weather-forecast/331652
+2026-01-03 23:57:11,922 [WARNING] services.web_search: Non-200 or empty response for URL https://www.accuweather.com/en/us/troy/36081/daily-weather-forecast/331652 (status 403)
+2026-01-03 23:57:11,923 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/longrange/al/Troy
+2026-01-03 23:57:12,191 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/longrange/al/Troy (status 403)
+2026-01-03 23:57:12,192 [INFO] services.web_search: Fetching URL: https://weather.com/weather/tenday/l/Troy+Alabama+36081?canonicalCityId=ae3fd72a5a66fe1e1b098d30255f90b2
+2026-01-03 23:57:13,535 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/tenday/l/Troy+Alabama+36081?canonicalCityId=ae3fd72a5a66fe1e1b098d30255f90b2 (words=1876)
+2026-01-03 23:57:13,535 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-03 23:57:13,536 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like today at Troy AL? detailed explanation' (max_results=6)
+2026-01-03 23:57:15,286 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:57:15,286 [INFO] services.web_search: Fetching URL: https://www.myforecast.com/30-day-forecast.php?cwid=10431&metric=false&city_count=&zip_code=36079&condition=act&data=1967677795
+2026-01-03 23:57:15,659 [WARNING] services.web_search: Error fetching URL https://www.myforecast.com/30-day-forecast.php?cwid=10431&metric=false&city_count=&zip_code=36079&condition=act&data=1967677795: HTTPSConnectionPool(host='www.myforecast.com', port=443): Max retries exceeded with url: /30-day-forecast.php?cwid=10431&metric=false&city_count=&zip_code=36079&condition=act&data=1967677795 (Caused by SSLError(SSLError(1, '[SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1016)')))
+2026-01-03 23:57:15,659 [INFO] services.web_search: Fetching URL: https://www.weatherbug.com/weather-forecast/now/troy-al-36079
+2026-01-03 23:57:20,837 [INFO] services.web_search: Fetched and extracted document from https://www.weatherbug.com/weather-forecast/now/troy-al-36079 (words=205)
+2026-01-03 23:57:20,838 [INFO] services.web_search: Fetching URL: https://www.timeanddate.com/weather/@4094163
+2026-01-03 23:57:21,257 [INFO] services.web_search: Fetched and extracted document from https://www.timeanddate.com/weather/@4094163 (words=441)
+2026-01-03 23:57:21,257 [INFO] services.web_search: Fetching URL: https://forecast.weather.gov/MapClick.php?lon=-86.058896&lat=31.938974
+2026-01-03 23:57:22,063 [INFO] services.web_search: Fetched and extracted document from https://forecast.weather.gov/MapClick.php?lon=-86.058896&lat=31.938974 (words=545)
+2026-01-03 23:57:22,063 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-03 23:57:22,067 [INFO] processing.text: Chunked 11 documents into 48 passages
+2026-01-03 23:57:22,078 [INFO] processing.text: Ranked 48 passages by relevance to the question
+2026-01-03 23:57:22,078 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=6941)
+2026-01-03 23:57:22,078 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:57:22,078 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:57:27,588 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:57:27,588 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:57:27,590 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:57:27,592 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-03 23:57:27,592 [INFO] pipeline: Queries this iteration: ['What is the weather like today at Troy AL? official documentation', 'What is the weather like today at Troy AL? detailed explanation']
+2026-01-03 23:57:27,592 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like today at Troy AL? official documentation' (max_results=6)
+2026-01-03 23:57:29,182 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:57:29,183 [INFO] services.web_search: Fetching URL: https://www.almanac.com/weather/forecast/AL/Troy
+2026-01-03 23:57:29,432 [WARNING] services.web_search: Non-200 or empty response for URL https://www.almanac.com/weather/forecast/AL/Troy (status 403)
+2026-01-03 23:57:29,432 [INFO] services.web_search: Fetching URL: https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652
+2026-01-03 23:57:29,550 [WARNING] services.web_search: Non-200 or empty response for URL https://www.accuweather.com/en/us/troy/36081/weather-forecast/331652 (status 403)
+2026-01-03 23:57:29,550 [INFO] services.web_search: Fetching URL: https://weather.com/weather/today/l/36079
+2026-01-03 23:57:30,037 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/today/l/36079 (words=733)
+2026-01-03 23:57:30,037 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-03 23:57:30,038 [INFO] services.web_search: Searching web with Tavily: 'What is the weather like today at Troy AL? detailed explanation' (max_results=6)
+2026-01-03 23:57:31,567 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-03 23:57:31,568 [INFO] services.web_search: Fetching URL: https://weatherspark.com/m/15025/1/Average-Weather-in-January-in-Troy-Alabama-United-States
+2026-01-03 23:57:31,970 [INFO] services.web_search: Fetched and extracted document from https://weatherspark.com/m/15025/1/Average-Weather-in-January-in-Troy-Alabama-United-States (words=5976)
+2026-01-03 23:57:31,970 [INFO] services.web_search: Fetching URL: https://weather.com/weather/monthly/l/Troy+AL?canonicalCityId=45ffb680ca2f026eb60192a6ffce873fb38ce3fcd995ab7450fa96c62d71140f
+2026-01-03 23:57:33,298 [INFO] services.web_search: Fetched and extracted document from https://weather.com/weather/monthly/l/Troy+AL?canonicalCityId=45ffb680ca2f026eb60192a6ffce873fb38ce3fcd995ab7450fa96c62d71140f (words=641)
+2026-01-03 23:57:33,298 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-03 23:57:33,300 [INFO] processing.text: Chunked 14 documents into 67 passages
+2026-01-03 23:57:33,307 [INFO] processing.text: Ranked 67 passages by relevance to the question
+2026-01-03 23:57:33,307 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=6941)
+2026-01-03 23:57:33,307 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-03 23:57:33,307 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:57:39,489 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:57:39,490 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-03 23:57:39,491 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-03 23:57:39,492 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-03 23:57:39,496 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-03 23:57:39,497 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-03 23:57:45,228 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-03 23:57:45,229 [INFO] pipeline: Pipeline finished.
+2026-01-04 00:03:41,762 [INFO] pipeline: Starting pipeline for question: What is the latest result in the game between Manchester United and Wolves?[C using model: gemma3:latest
+2026-01-04 00:03:41,767 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 00:03:41,767 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?\x1b[C']
+2026-01-04 00:03:41,768 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?\x1b[C' (max_results=6)
+2026-01-04 00:03:42,683 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:03:42,684 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/report/_/gameId/740782
+2026-01-04 00:03:42,883 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/report/_/gameId/740782 (words=995)
+2026-01-04 00:03:42,884 [INFO] services.web_search: Fetching URL: https://www.facebook.com/groups/manchesterunited7/posts/1462176205462441/
+2026-01-04 00:03:43,291 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/groups/manchesterunited7/posts/1462176205462441/ (words=6)
+2026-01-04 00:03:43,292 [INFO] services.web_search: Fetching URL: https://www.bbc.com/sport/football/live/c24609jld9rt
+2026-01-04 00:03:44,345 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/sport/football/live/c24609jld9rt (words=4965)
+2026-01-04 00:03:44,345 [INFO] services.web_search: Fetching URL: https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/
+2026-01-04 00:03:45,633 [INFO] services.web_search: Fetched and extracted document from https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/ (words=17)
+2026-01-04 00:03:45,633 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=9gmYYSs9Wg8
+2026-01-04 00:03:46,268 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=9gmYYSs9Wg8 (words=39)
+2026-01-04 00:03:46,268 [INFO] services.web_search: Fetching URL: https://www.si.com/soccer/man-utd-player-ratings-vs-wolves-12-30-25
+2026-01-04 00:03:46,906 [INFO] services.web_search: Fetched and extracted document from https://www.si.com/soccer/man-utd-player-ratings-vs-wolves-12-30-25 (words=1389)
+2026-01-04 00:03:46,906 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:03:46,908 [INFO] processing.text: Chunked 6 documents into 20 passages
+2026-01-04 00:03:46,917 [INFO] processing.text: Ranked 20 passages by relevance to the question
+2026-01-04 00:03:46,917 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=7821)
+2026-01-04 00:03:46,917 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:03:46,917 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:03:56,416 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:03:56,417 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-04 00:03:56,418 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-04 00:03:56,421 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-04 00:03:56,421 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?\x1b[C official documentation', 'What is the latest result in the game between Manchester United and Wolves?\x1b[C detailed explanation']
+2026-01-04 00:03:56,421 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?\x1b[C official documentation' (max_results=6)
+2026-01-04 00:03:58,024 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:03:58,025 [INFO] services.web_search: Fetching URL: https://www.premierleague.com/en/match/2562081
+2026-01-04 00:03:58,659 [INFO] services.web_search: Fetched and extracted document from https://www.premierleague.com/en/match/2562081 (words=16)
+2026-01-04 00:03:58,660 [INFO] services.web_search: Fetching URL: https://ca.sports.yahoo.com/soccer/premier-league/manchester-united-wolverhampton-wanderers-13585365/
+2026-01-04 00:03:59,816 [INFO] services.web_search: Fetched and extracted document from https://ca.sports.yahoo.com/soccer/premier-league/manchester-united-wolverhampton-wanderers-13585365/ (words=1608)
+2026-01-04 00:03:59,816 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/story/_/id/47247590/wolves-vs-man-united-live-latest-updates-premier-league-molineux-ruben-amorim
+2026-01-04 00:04:00,298 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/story/_/id/47247590/wolves-vs-man-united-live-latest-updates-premier-league-molineux-ruben-amorim (words=756)
+2026-01-04 00:04:00,298 [INFO] services.web_search: Fetching URL: https://www.alm.com/press_release/alm-intelligence-updates-verdictsearch/?s-news-19813533-2025-12-09-wolves-1-4-man-utd-a-promising-start-to-the-season-at-molineux
+2026-01-04 00:04:01,562 [INFO] services.web_search: Fetched and extracted document from https://www.alm.com/press_release/alm-intelligence-updates-verdictsearch/?s-news-19813533-2025-12-09-wolves-1-4-man-utd-a-promising-start-to-the-season-at-molineux (words=429)
+2026-01-04 00:04:01,563 [INFO] services.web_search: Fetching URL: https://en.as.com/resultados/futbol/inglaterra/2025_2026/directo/regular_a_19_685277b71d49247/
+2026-01-04 00:04:02,689 [INFO] services.web_search: Fetched and extracted document from https://en.as.com/resultados/futbol/inglaterra/2025_2026/directo/regular_a_19_685277b71d49247/ (words=1509)
+2026-01-04 00:04:02,690 [INFO] services.web_search: Fetching URL: https://www.bbc.com/sport/football/live/c8jwgrwywljt
+2026-01-04 00:04:03,394 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/sport/football/live/c8jwgrwywljt (words=6977)
+2026-01-04 00:04:03,394 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:04:03,394 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?\x1b[C detailed explanation' (max_results=6)
+2026-01-04 00:04:04,322 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:04:04,322 [INFO] services.web_search: Fetching URL: https://www.manutd.com/en/news/detail/match-report-for-man-utd-v-wolverhampton-wanderers-30-december-2025
+2026-01-04 00:04:04,817 [INFO] services.web_search: Fetched and extracted document from https://www.manutd.com/en/news/detail/match-report-for-man-utd-v-wolverhampton-wanderers-30-december-2025 (words=1189)
+2026-01-04 00:04:04,818 [INFO] services.web_search: Fetching URL: https://www.facebook.com/groups/9002902079162957g/posts/3410545599119877/
+2026-01-04 00:04:05,262 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/groups/9002902079162957g/posts/3410545599119877/ (words=12)
+2026-01-04 00:04:05,262 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=o3HPrG0L064
+2026-01-04 00:04:06,048 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=o3HPrG0L064 (words=41)
+2026-01-04 00:04:06,048 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=UiXfNVqGnno
+2026-01-04 00:04:06,650 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=UiXfNVqGnno (words=38)
+2026-01-04 00:04:06,650 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:04:06,653 [INFO] processing.text: Chunked 16 documents into 52 passages
+2026-01-04 00:04:06,665 [INFO] processing.text: Ranked 52 passages by relevance to the question
+2026-01-04 00:04:06,665 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=6765)
+2026-01-04 00:04:06,665 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:04:06,665 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:04:13,643 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:04:13,644 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-04 00:04:13,645 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-04 00:04:13,647 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-04 00:04:13,648 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?\x1b[C official documentation', 'What is the latest result in the game between Manchester United and Wolves?\x1b[C detailed explanation']
+2026-01-04 00:04:13,648 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?\x1b[C official documentation' (max_results=6)
+2026-01-04 00:04:15,230 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:04:15,230 [INFO] services.web_search: Fetching URL: https://www.premierleague.com/en/match/2562081/manchester-united-vs-wolverhampton-wanderers
+2026-01-04 00:04:15,959 [INFO] services.web_search: Fetched and extracted document from https://www.premierleague.com/en/match/2562081/manchester-united-vs-wolverhampton-wanderers (words=16)
+2026-01-04 00:04:15,959 [INFO] services.web_search: Fetching URL: https://www.besoccer.com/match/manchester-united-fc/wolverhampton/20267247/livescore
+2026-01-04 00:04:16,844 [INFO] services.web_search: Fetched and extracted document from https://www.besoccer.com/match/manchester-united-fc/wolverhampton/20267247/livescore (words=275)
+2026-01-04 00:04:16,844 [INFO] services.web_search: Fetching URL: https://www.alm.com/press_release/alm-intelligence-updates-verdictsearch/?s-news-19820435-2025-12-09-manchester-united-dominates-wolverhampton-4-1-premier-league
+2026-01-04 00:04:17,821 [INFO] services.web_search: Fetched and extracted document from https://www.alm.com/press_release/alm-intelligence-updates-verdictsearch/?s-news-19820435-2025-12-09-manchester-united-dominates-wolverhampton-4-1-premier-league (words=429)
+2026-01-04 00:04:17,821 [INFO] services.web_search: Fetching URL: https://en.as.com/resultados/futbol/inglaterra/2025_2026/directo/regular_a_19_685277b71d49247/estadisticas/
+2026-01-04 00:04:18,490 [INFO] services.web_search: Fetched and extracted document from https://en.as.com/resultados/futbol/inglaterra/2025_2026/directo/regular_a_19_685277b71d49247/estadisticas/ (words=96)
+2026-01-04 00:04:18,490 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:04:18,490 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?\x1b[C detailed explanation' (max_results=6)
+2026-01-04 00:04:19,646 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:04:19,646 [INFO] services.web_search: Fetching URL: https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis
+2026-01-04 00:04:19,958 [INFO] services.web_search: Fetched and extracted document from https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis (words=1083)
+2026-01-04 00:04:19,959 [INFO] services.web_search: Fetching URL: https://en.as.com/soccer/manchester-united-vs-wolves-live-online-score-stats-goals-updates-premier-league-202526-f202512-n/
+2026-01-04 00:04:20,119 [INFO] services.web_search: Fetched and extracted document from https://en.as.com/soccer/manchester-united-vs-wolves-live-online-score-stats-goals-updates-premier-league-202526-f202512-n/ (words=1509)
+2026-01-04 00:04:20,119 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:04:20,121 [INFO] processing.text: Chunked 22 documents into 62 passages
+2026-01-04 00:04:20,131 [INFO] processing.text: Ranked 62 passages by relevance to the question
+2026-01-04 00:04:20,131 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=6765)
+2026-01-04 00:04:20,131 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:04:20,131 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:04:25,590 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:04:25,590 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting value: line 1 column 1 (char 0). Falling back to heuristic.
+2026-01-04 00:04:25,592 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-04 00:04:25,593 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-04 00:04:25,597 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-04 00:04:25,597 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:04:28,624 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:04:28,625 [INFO] pipeline: Pipeline finished.
+2026-01-04 00:09:22,651 [INFO] pipeline: Starting pipeline for question: What is the latest result in the game between Manchester United and Wolves? using model: gemma3:latest
+2026-01-04 00:09:22,656 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 00:09:22,657 [INFO] pipeline: Queries this iteration: ['What is the latest result in the game between Manchester United and Wolves?']
+2026-01-04 00:09:22,658 [INFO] services.web_search: Searching web with Tavily: 'What is the latest result in the game between Manchester United and Wolves?' (max_results=6)
+2026-01-04 00:09:24,167 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:09:24,167 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/report/_/gameId/740782
+2026-01-04 00:09:24,594 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/report/_/gameId/740782 (words=995)
+2026-01-04 00:09:24,594 [INFO] services.web_search: Fetching URL: https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/
+2026-01-04 00:09:25,156 [INFO] services.web_search: Fetched and extracted document from https://www.flashscoreusa.com/game/soccer/manchester-united-ppjDR086/wolves-j3Azpf5d/ (words=17)
+2026-01-04 00:09:25,156 [INFO] services.web_search: Fetching URL: https://www.thesun.co.uk/sport/37764485/man-utd-vs-wolves-live-score-result-premier-league-latest-updates/
+2026-01-04 00:09:25,720 [INFO] services.web_search: Fetched and extracted document from https://www.thesun.co.uk/sport/37764485/man-utd-vs-wolves-live-score-result-premier-league-latest-updates/ (words=195)
+2026-01-04 00:09:25,720 [INFO] services.web_search: Fetching URL: https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis
+2026-01-04 00:09:26,026 [INFO] services.web_search: Fetched and extracted document from https://www.nbcsports.com/soccer/news/manchester-united-1-1-wolves-video-highlights-recap-analysis (words=1083)
+2026-01-04 00:09:26,026 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=o3HPrG0L064
+2026-01-04 00:09:26,922 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=o3HPrG0L064 (words=41)
+2026-01-04 00:09:26,923 [INFO] services.web_search: Fetching URL: https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/
+2026-01-04 00:09:27,943 [INFO] services.web_search: Fetched and extracted document from https://sports.yahoo.com/soccer/premier-league/wolverhampton-wanderers-manchester-united-13562825/ (words=936)
+2026-01-04 00:09:27,943 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:09:27,944 [INFO] processing.text: Chunked 6 documents into 10 passages
+2026-01-04 00:09:27,947 [INFO] processing.text: Ranked 10 passages by relevance to the question
+2026-01-04 00:09:27,947 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=6621)
+2026-01-04 00:09:27,947 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:09:27,947 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:09:34,382 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:09:34,383 [INFO] pipeline: Evaluation: The context provides multiple articles reporting the final score of the Manchester United vs. Wolves game, specifically stating it ended 1-1. It also includes details about the match's outcome and a brief recap. This is sufficient to answer the user's question.
+2026-01-04 00:09:34,385 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-04 00:09:34,388 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-04 00:09:34,388 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:09:36,666 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:09:36,668 [INFO] pipeline: Pipeline finished.
+2026-01-04 00:10:08,897 [INFO] pipeline: Starting pipeline for question: What is ISODS? using model: gemma3:latest
+2026-01-04 00:10:08,902 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 00:10:08,902 [INFO] pipeline: Queries this iteration: ['What is ISODS?']
+2026-01-04 00:10:08,903 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS?' (max_results=6)
+2026-01-04 00:10:10,558 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:10:10,558 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/
+2026-01-04 00:10:11,181 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/ (words=9)
+2026-01-04 00:10:11,181 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf
+2026-01-04 00:10:11,403 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf (status 403)
+2026-01-04 00:10:11,403 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/photos/d41d8cd9/1165403748964916/
+2026-01-04 00:10:11,799 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/photos/d41d8cd9/1165403748964916/ (words=1)
+2026-01-04 00:10:11,799 [INFO] services.web_search: Fetching URL: https://portal.isods.org/opportunities
+2026-01-04 00:10:12,612 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/opportunities (words=265)
+2026-01-04 00:10:12,612 [INFO] services.web_search: Fetching URL: https://portal.isods.org/
+2026-01-04 00:10:13,605 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/ (words=364)
+2026-01-04 00:10:13,606 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/company/isods
+2026-01-04 00:10:14,895 [INFO] services.web_search: Fetched and extracted document from https://www.linkedin.com/company/isods (words=1850)
+2026-01-04 00:10:14,895 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:10:14,896 [INFO] processing.text: Chunked 5 documents into 7 passages
+2026-01-04 00:10:14,901 [INFO] processing.text: Ranked 7 passages by relevance to the question
+2026-01-04 00:10:14,902 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=7006)
+2026-01-04 00:10:14,902 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:10:14,902 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:10:22,510 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:10:22,512 [INFO] pipeline: Evaluation: The context provides a good overview of ISODS, detailing its formation, the standardized exams it offers (covering key data science areas like probability, statistics, and ML), and its impact in Vietnam as a globally-aligned competency assessment system. While it doesn't delve into the full history or mission, it's sufficient to answer the basic question of 'What is ISODS?'
+2026-01-04 00:10:22,513 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-04 00:10:22,516 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-04 00:10:22,516 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:10:26,266 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:10:26,266 [INFO] pipeline: Pipeline finished.
+2026-01-04 00:17:40,385 [INFO] pipeline: Starting pipeline for question: WHat is the weather like today? using model: gemma3:latest
+2026-01-04 00:17:40,388 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 00:17:40,388 [INFO] pipeline: Queries this iteration: ['WHat is the weather like today?']
+2026-01-04 00:17:40,388 [INFO] services.web_search: Searching web with Tavily: 'WHat is the weather like today?' (max_results=6)
+2026-01-04 00:17:42,659 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:17:42,659 [INFO] services.web_search: Fetching URL: https://www.weatherapi.com/
+2026-01-04 00:17:43,518 [INFO] services.web_search: Fetched and extracted document from https://www.weatherapi.com/ (words=4482)
+2026-01-04 00:17:43,518 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=amnX9ox2juY
+2026-01-04 00:17:44,322 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=amnX9ox2juY (words=35)
+2026-01-04 00:17:44,322 [INFO] services.web_search: Fetching URL: https://uwmpost.com/home-featured-weather/5-day-weather-forecast-january-4-2026
+2026-01-04 00:17:45,283 [INFO] services.web_search: Fetched and extracted document from https://uwmpost.com/home-featured-weather/5-day-weather-forecast-january-4-2026 (words=688)
+2026-01-04 00:17:45,284 [INFO] services.web_search: Fetching URL: https://www.wsaw.com/video/2026/01/04/first-alert-weather-sunday-morning-forecast-january-4-2026/
+2026-01-04 00:17:45,750 [INFO] services.web_search: Fetched and extracted document from https://www.wsaw.com/video/2026/01/04/first-alert-weather-sunday-morning-forecast-january-4-2026/ (words=231)
+2026-01-04 00:17:45,750 [INFO] services.web_search: Fetching URL: https://world-weather.info/forecast/usa/new_orleans/january-2026/
+2026-01-04 00:17:46,123 [WARNING] services.web_search: Non-200 or empty response for URL https://world-weather.info/forecast/usa/new_orleans/january-2026/ (status 403)
+2026-01-04 00:17:46,123 [INFO] services.web_search: Fetching URL: https://en.climate-data.org/north-america/united-states-of-america/louisiana-943/r/january-1/
+2026-01-04 00:17:46,508 [INFO] services.web_search: Fetched and extracted document from https://en.climate-data.org/north-america/united-states-of-america/louisiana-943/r/january-1/ (words=7698)
+2026-01-04 00:17:46,508 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:17:46,509 [INFO] processing.text: Chunked 5 documents into 35 passages
+2026-01-04 00:17:46,515 [INFO] processing.text: Ranked 35 passages by relevance to the question
+2026-01-04 00:17:46,515 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=6822)
+2026-01-04 00:17:46,515 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:17:46,515 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:17:54,135 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:17:54,137 [INFO] pipeline: Evaluation: The context provides weather information for Louisiana in January 2026, but it doesn't specify the current date or location. It doesn't answer the user's question about the weather 'today'.
+2026-01-04 00:17:54,140 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-04 00:17:54,140 [INFO] pipeline: Queries this iteration: ['current weather conditions in New York City', 'current weather forecast for London', 'real-time weather data for San Francisco']
+2026-01-04 00:17:54,141 [INFO] services.web_search: Searching web with Tavily: 'current weather conditions in New York City' (max_results=6)
+2026-01-04 00:17:55,767 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:17:55,768 [INFO] services.web_search: Fetching URL: https://weathershogun.com/weather/usa/ny/new-york/3284/january/2026-01-04
+2026-01-04 00:17:56,450 [INFO] services.web_search: Fetched and extracted document from https://weathershogun.com/weather/usa/ny/new-york/3284/january/2026-01-04 (words=278)
+2026-01-04 00:17:56,450 [INFO] services.web_search: Fetching URL: https://www.weather2travel.com/new-york/new-york-city/april/
+2026-01-04 00:17:57,131 [INFO] services.web_search: Fetched and extracted document from https://www.weather2travel.com/new-york/new-york-city/april/ (words=710)
+2026-01-04 00:17:57,131 [INFO] services.web_search: Fetching URL: https://world-weather.info/forecast/usa/new_york/april-2026/
+2026-01-04 00:17:57,358 [WARNING] services.web_search: Non-200 or empty response for URL https://world-weather.info/forecast/usa/new_york/april-2026/ (status 403)
+2026-01-04 00:17:57,358 [INFO] services.web_search: Fetching URL: https://www.weathertab.com/en/g/04/united-states/new-york/10114-new-york-city/
+2026-01-04 00:17:57,892 [INFO] services.web_search: Fetched and extracted document from https://www.weathertab.com/en/g/04/united-states/new-york/10114-new-york-city/ (words=4004)
+2026-01-04 00:17:57,892 [INFO] services.web_search: Fetching URL: https://www.metcheck.com/WEATHER/dayforecast.asp?location=New%20York%20City&locationID=2028371&lat=40.71427&lon=-74.00597&dateFor=04/01/2026
+2026-01-04 00:17:59,795 [INFO] services.web_search: Fetched and extracted document from https://www.metcheck.com/WEATHER/dayforecast.asp?location=New%20York%20City&locationID=2028371&lat=40.71427&lon=-74.00597&dateFor=04/01/2026 (words=2835)
+2026-01-04 00:17:59,795 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:17:59,795 [INFO] services.web_search: Searching web with Tavily: 'current weather forecast for London' (max_results=6)
+2026-01-04 00:18:01,261 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:18:01,262 [INFO] services.web_search: Fetching URL: https://www.weather25.com/europe/united-kingdom/london?page=month&month=April
+2026-01-04 00:18:01,739 [INFO] services.web_search: Fetched and extracted document from https://www.weather25.com/europe/united-kingdom/london?page=month&month=April (words=1110)
+2026-01-04 00:18:01,739 [INFO] services.web_search: Fetching URL: https://world-weather.info/forecast/united_kingdom/london/january-2026/
+2026-01-04 00:18:01,984 [WARNING] services.web_search: Non-200 or empty response for URL https://world-weather.info/forecast/united_kingdom/london/january-2026/ (status 403)
+2026-01-04 00:18:01,984 [INFO] services.web_search: Fetching URL: https://en.climate-data.org/europe/united-kingdom/england/london-1/t/april-4/
+2026-01-04 00:18:02,211 [INFO] services.web_search: Fetched and extracted document from https://en.climate-data.org/europe/united-kingdom/england/london-1/t/april-4/ (words=2718)
+2026-01-04 00:18:02,211 [INFO] services.web_search: Fetching URL: https://world-weather.info/forecast/united_kingdom/london/month/
+2026-01-04 00:18:02,355 [WARNING] services.web_search: Non-200 or empty response for URL https://world-weather.info/forecast/united_kingdom/london/month/ (status 403)
+2026-01-04 00:18:02,355 [INFO] services.web_search: Fetching URL: https://www.bbc.co.uk/programmes/m002pd15
+2026-01-04 00:18:03,052 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.co.uk/programmes/m002pd15 (words=113)
+2026-01-04 00:18:03,052 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-04 00:18:03,053 [INFO] services.web_search: Searching web with Tavily: 'real-time weather data for San Francisco' (max_results=6)
+2026-01-04 00:18:04,880 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:18:04,881 [INFO] services.web_search: Fetching URL: https://www.weather2travel.com/california/san-francisco/april/
+2026-01-04 00:18:05,460 [INFO] services.web_search: Fetched and extracted document from https://www.weather2travel.com/california/san-francisco/april/ (words=891)
+2026-01-04 00:18:05,460 [INFO] services.web_search: Fetching URL: https://www.visualcrossing.com/weather-history/San%20Francisco,%20CA,%20United%20States/us/last15days/
+2026-01-04 00:18:06,488 [INFO] services.web_search: Fetched and extracted document from https://www.visualcrossing.com/weather-history/San%20Francisco,%20CA,%20United%20States/us/last15days/ (words=102)
+2026-01-04 00:18:06,489 [INFO] services.web_search: Fetching URL: https://world-weather.info/forecast/usa/san_francisco/january-2026/
+2026-01-04 00:18:06,702 [WARNING] services.web_search: Non-200 or empty response for URL https://world-weather.info/forecast/usa/san_francisco/january-2026/ (status 403)
+2026-01-04 00:18:06,703 [INFO] services.web_search: Fetching URL: https://en.climate-data.org/north-america/united-states-of-america/california/san-francisco-385/t/april-4/
+2026-01-04 00:18:06,909 [INFO] services.web_search: Fetched and extracted document from https://en.climate-data.org/north-america/united-states-of-america/california/san-francisco-385/t/april-4/ (words=3612)
+2026-01-04 00:18:06,909 [INFO] services.web_search: Fetching URL: https://www.accuweather.com/en/us/san-francisco/94103/january-weather/347629
+2026-01-04 00:18:07,046 [WARNING] services.web_search: Non-200 or empty response for URL https://www.accuweather.com/en/us/san-francisco/94103/january-weather/347629 (status 403)
+2026-01-04 00:18:07,046 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-04 00:18:07,051 [INFO] processing.text: Chunked 15 documents into 79 passages
+2026-01-04 00:18:07,066 [INFO] processing.text: Ranked 79 passages by relevance to the question
+2026-01-04 00:18:07,066 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=4892)
+2026-01-04 00:18:07,066 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:18:07,067 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:18:13,962 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:18:13,963 [INFO] pipeline: Evaluation: The context provides a detailed weather forecast for New York City on January 4, 2026, including temperature, feels like temperature, wind speed, humidity, and precipitation. It offers both a forecast and a reference to a BBC Weather program that will cover the same information.
+2026-01-04 00:18:13,964 [INFO] pipeline: Evaluator judged context sufficient on iteration 2; stopping search.
+2026-01-04 00:18:13,968 [INFO] agents.answerer: Building answer from 3 passages using Ollama (gemma3:latest)
+2026-01-04 00:18:13,968 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:18:20,200 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:18:20,200 [INFO] pipeline: Pipeline finished.
+2026-01-04 00:27:29,802 [INFO] pipeline: Starting pipeline for question: What was happening in venezuela recently? using model: gemma3:latest
+2026-01-04 00:27:29,808 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 00:27:29,808 [INFO] pipeline: Queries this iteration: ['What was happening in venezuela recently?']
+2026-01-04 00:27:29,809 [INFO] services.web_search: Searching web with Tavily: 'What was happening in venezuela recently?' (max_results=6)
+2026-01-04 00:27:30,916 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:27:30,916 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=5UW3gsECPt8
+2026-01-04 00:27:31,911 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=5UW3gsECPt8 (words=42)
+2026-01-04 00:27:31,911 [INFO] services.web_search: Fetching URL: https://www.nbcnews.com/world/latin-america/live-blog/venezuela-explosions-trump-maduro-live-updates-rcna251053
+2026-01-04 00:27:32,548 [INFO] services.web_search: Fetched and extracted document from https://www.nbcnews.com/world/latin-america/live-blog/venezuela-explosions-trump-maduro-live-updates-rcna251053 (words=17957)
+2026-01-04 00:27:32,549 [INFO] services.web_search: Fetching URL: https://www.aljazeera.com/where/venezuela/
+2026-01-04 00:27:33,074 [INFO] services.web_search: Fetched and extracted document from https://www.aljazeera.com/where/venezuela/ (words=727)
+2026-01-04 00:27:33,074 [INFO] services.web_search: Fetching URL: https://www.nbcmiami.com/news/national-international/live-updates-us-venezuela-strike-maduro-capture/3743099/
+2026-01-04 00:27:33,479 [INFO] services.web_search: Fetched and extracted document from https://www.nbcmiami.com/news/national-international/live-updates-us-venezuela-strike-maduro-capture/3743099/ (words=396)
+2026-01-04 00:27:33,479 [INFO] services.web_search: Fetching URL: https://www.cbsnews.com/live-updates/venezuela-us-military-strikes-maduro-trump/
+2026-01-04 00:27:33,897 [INFO] services.web_search: Fetched and extracted document from https://www.cbsnews.com/live-updates/venezuela-us-military-strikes-maduro-trump/ (words=13111)
+2026-01-04 00:27:33,897 [INFO] services.web_search: Fetching URL: https://www.npr.org/2026/01/03/nx-s1-5665670/venezuela-strikes-us-maduro
+2026-01-04 00:27:44,208 [WARNING] services.web_search: Error fetching URL https://www.npr.org/2026/01/03/nx-s1-5665670/venezuela-strikes-us-maduro: HTTPSConnectionPool(host='www.npr.org', port=443): Read timed out. (read timeout=10.0)
+2026-01-04 00:27:44,208 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:27:44,214 [INFO] processing.text: Chunked 5 documents into 81 passages
+2026-01-04 00:27:44,244 [INFO] processing.text: Ranked 81 passages by relevance to the question
+2026-01-04 00:27:44,244 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=6165)
+2026-01-04 00:27:44,245 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:27:44,245 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:27:54,220 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:27:54,222 [INFO] pipeline: Evaluation: The context provides only a very brief, immediate snapshot related to Maduro's arrival in New York following his capture in Venezuela and a related U.S. embassy warning. It lacks any substantial information about the broader political situation, recent events, economic conditions, or key developments in Venezuela. It's purely reactive and doesn't offer a comprehensive overview of 'what was happening recently'.
+2026-01-04 00:27:54,225 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-04 00:27:54,225 [INFO] pipeline: Queries this iteration: ["Recent political developments in Venezuela since Maduro's capture", 'Current economic situation in Venezuela (inflation, shortages, etc.)', 'Recent military activity or unrest in Venezuela']
+2026-01-04 00:27:54,226 [INFO] services.web_search: Searching web with Tavily: "Recent political developments in Venezuela since Maduro's capture" (max_results=6)
+2026-01-04 00:27:55,373 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:27:55,374 [INFO] services.web_search: Fetching URL: https://www.csis.org/analysis/maduro-captured-what-comes-next-venezuela
+2026-01-04 00:27:55,861 [INFO] services.web_search: Fetched and extracted document from https://www.csis.org/analysis/maduro-captured-what-comes-next-venezuela (words=1077)
+2026-01-04 00:27:55,861 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=4Jnv_NWNUtg
+2026-01-04 00:27:56,669 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=4Jnv_NWNUtg (words=44)
+2026-01-04 00:27:56,670 [INFO] services.web_search: Fetching URL: https://www.aljazeera.com/news/liveblog/2026/1/3/live-venezuelas-maduro-arrives-in-new-york-after-capture
+2026-01-04 00:27:57,065 [INFO] services.web_search: Fetched and extracted document from https://www.aljazeera.com/news/liveblog/2026/1/3/live-venezuelas-maduro-arrives-in-new-york-after-capture (words=20)
+2026-01-04 00:27:57,065 [INFO] services.web_search: Fetching URL: https://www.bbc.com/news/articles/c86vq753nwpo
+2026-01-04 00:27:57,247 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/news/articles/c86vq753nwpo (words=830)
+2026-01-04 00:27:57,248 [INFO] services.web_search: Fetching URL: https://thehill.com/policy/international/5671580-venezuela-political-crisis-maduro/
+2026-01-04 00:27:57,576 [WARNING] services.web_search: Non-200 or empty response for URL https://thehill.com/policy/international/5671580-venezuela-political-crisis-maduro/ (status 403)
+2026-01-04 00:27:57,576 [INFO] services.web_search: Fetching URL: https://www.atlanticcouncil.org/dispatches/us-just-captured-maduro-whats-next-for-venezuela-and-the-region/
+2026-01-04 00:27:59,060 [INFO] services.web_search: Fetched and extracted document from https://www.atlanticcouncil.org/dispatches/us-just-captured-maduro-whats-next-for-venezuela-and-the-region/ (words=4009)
+2026-01-04 00:27:59,061 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:27:59,061 [INFO] services.web_search: Searching web with Tavily: 'Current economic situation in Venezuela (inflation, shortages, etc.)' (max_results=6)
+2026-01-04 00:28:00,442 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:28:00,443 [INFO] services.web_search: Fetching URL: https://en.wikipedia.org/wiki/Economy_of_Venezuela
+2026-01-04 00:28:01,014 [INFO] services.web_search: Fetched and extracted document from https://en.wikipedia.org/wiki/Economy_of_Venezuela (words=18376)
+2026-01-04 00:28:01,014 [INFO] services.web_search: Fetching URL: https://www.focus-economics.com/countries/venezuela/
+2026-01-04 00:28:01,371 [WARNING] services.web_search: Non-200 or empty response for URL https://www.focus-economics.com/countries/venezuela/ (status 403)
+2026-01-04 00:28:01,371 [INFO] services.web_search: Fetching URL: https://www.statista.com/topics/11572/poverty-and-inequality-in-venezuela/?srsltid=AfmBOoqCQOhKasSyfRjst6AmX3G5VFArkG6buXMb0Srws7a6pDnPWdIC
+2026-01-04 00:28:04,678 [INFO] services.web_search: Fetched and extracted document from https://www.statista.com/topics/11572/poverty-and-inequality-in-venezuela/?srsltid=AfmBOoqCQOhKasSyfRjst6AmX3G5VFArkG6buXMb0Srws7a6pDnPWdIC (words=1697)
+2026-01-04 00:28:04,678 [INFO] services.web_search: Fetching URL: https://tradingeconomics.com/venezuela/inflation-cpi
+2026-01-04 00:28:05,285 [INFO] services.web_search: Fetched and extracted document from https://tradingeconomics.com/venezuela/inflation-cpi (words=792)
+2026-01-04 00:28:05,285 [INFO] services.web_search: Fetching URL: https://www.cnn.com/2025/11/11/americas/venezuela-inflation-us-tension-intl-latam
+2026-01-04 00:28:05,785 [INFO] services.web_search: Fetched and extracted document from https://www.cnn.com/2025/11/11/americas/venezuela-inflation-us-tension-intl-latam (words=1543)
+2026-01-04 00:28:05,786 [INFO] services.web_search: Fetching URL: https://www.worldvision.org/disaster-relief-news-stories/venezuela-crisis-facts
+2026-01-04 00:28:06,153 [INFO] services.web_search: Fetched and extracted document from https://www.worldvision.org/disaster-relief-news-stories/venezuela-crisis-facts (words=2329)
+2026-01-04 00:28:06,154 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:28:06,154 [INFO] services.web_search: Searching web with Tavily: 'Recent military activity or unrest in Venezuela' (max_results=6)
+2026-01-04 00:28:07,437 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:28:07,438 [INFO] services.web_search: Fetching URL: https://www.capradio.org/articles/2026/01/03/us-military-action-in-venezuela-sparks-political-backlash-protests-in-california/
+2026-01-04 00:28:08,660 [INFO] services.web_search: Fetched and extracted document from https://www.capradio.org/articles/2026/01/03/us-military-action-in-venezuela-sparks-political-backlash-protests-in-california/ (words=1156)
+2026-01-04 00:28:08,660 [INFO] services.web_search: Fetching URL: https://komonews.com/news/local/seattle-protests-us-military-operation-in-venezuela-amid-maduro-capture-strikes-trump-united-states-washington-state-republican-party-chair-jim-walsh
+2026-01-04 00:28:09,017 [INFO] services.web_search: Fetched and extracted document from https://komonews.com/news/local/seattle-protests-us-military-operation-in-venezuela-amid-maduro-capture-strikes-trump-united-states-washington-state-republican-party-chair-jim-walsh (words=724)
+2026-01-04 00:28:09,017 [INFO] services.web_search: Fetching URL: https://www.cfr.org/global-conflict-tracker/conflict/instability-venezuela
+2026-01-04 00:28:10,412 [INFO] services.web_search: Fetched and extracted document from https://www.cfr.org/global-conflict-tracker/conflict/instability-venezuela (words=7605)
+2026-01-04 00:28:10,412 [INFO] services.web_search: Fetching URL: https://www.koat.com/article/protest-albuquerque-response-venezuela-military-operation/69909307
+2026-01-04 00:28:10,736 [INFO] services.web_search: Fetched and extracted document from https://www.koat.com/article/protest-albuquerque-response-venezuela-military-operation/69909307 (words=985)
+2026-01-04 00:28:10,736 [INFO] services.web_search: Fetching URL: https://6abc.com/post/venezuela-trumps-shifting-explanations-military-buildup/18346832/
+2026-01-04 00:28:11,243 [INFO] services.web_search: Fetched and extracted document from https://6abc.com/post/venezuela-trumps-shifting-explanations-military-buildup/18346832/ (words=685)
+2026-01-04 00:28:11,243 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:28:11,251 [INFO] processing.text: Chunked 20 documents into 188 passages
+2026-01-04 00:28:11,310 [INFO] processing.text: Ranked 188 passages by relevance to the question
+2026-01-04 00:28:11,310 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=6165)
+2026-01-04 00:28:11,310 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:28:11,310 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:28:18,968 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:28:18,970 [INFO] pipeline: Evaluation: The context provides a very limited and somewhat sensationalized snapshot of recent events surrounding Maduro's arrival in New York following his capture. It focuses heavily on a U.S. embassy advisory and a brief mention of minor explosions, but lacks any substantive information about the broader political situation, economic conditions, or key events within Venezuela itself. It doesn't explain *why* Maduro was captured, the implications of the legal equality debate, or the recent unrest.
+2026-01-04 00:28:18,973 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-04 00:28:18,973 [INFO] pipeline: Queries this iteration: ['Recent political developments and government actions in Venezuela', 'Current economic situation and inflation rates in Venezuela', 'Reports of unrest and protests in Venezuela – key demands and responses from the government']
+2026-01-04 00:28:18,974 [INFO] services.web_search: Searching web with Tavily: 'Recent political developments and government actions in Venezuela' (max_results=6)
+2026-01-04 00:28:20,227 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:28:20,227 [INFO] services.web_search: Fetching URL: https://news.un.org/en/story/2026/01/1166698
+2026-01-04 00:28:20,514 [INFO] services.web_search: Fetched and extracted document from https://news.un.org/en/story/2026/01/1166698 (words=906)
+2026-01-04 00:28:20,514 [INFO] services.web_search: Fetching URL: https://www.npr.org/2026/01/03/nx-s1-5665670/venezuela-strikes-us-maduro
+2026-01-04 00:28:30,710 [WARNING] services.web_search: Error fetching URL https://www.npr.org/2026/01/03/nx-s1-5665670/venezuela-strikes-us-maduro: HTTPSConnectionPool(host='www.npr.org', port=443): Read timed out. (read timeout=10.0)
+2026-01-04 00:28:30,711 [INFO] services.web_search: Fetching URL: https://www.pbs.org/newshour/world/a-timeline-of-u-s-military-escalation-against-venezuela-leading-to-maduros-capture
+2026-01-04 00:28:31,207 [INFO] services.web_search: Fetched and extracted document from https://www.pbs.org/newshour/world/a-timeline-of-u-s-military-escalation-against-venezuela-leading-to-maduros-capture (words=2780)
+2026-01-04 00:28:31,207 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:28:31,208 [INFO] services.web_search: Searching web with Tavily: 'Current economic situation and inflation rates in Venezuela' (max_results=6)
+2026-01-04 00:28:32,174 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:28:32,174 [INFO] services.web_search: Fetching URL: https://www.statista.com/statistics/371895/inflation-rate-in-venezuela/?srsltid=AfmBOookFztkh_SVYBT1dg8ub8hT6xDs6LfimhSYyvktVFFNWlFFxEj5
+2026-01-04 00:28:34,557 [INFO] services.web_search: Fetched and extracted document from https://www.statista.com/statistics/371895/inflation-rate-in-venezuela/?srsltid=AfmBOookFztkh_SVYBT1dg8ub8hT6xDs6LfimhSYyvktVFFNWlFFxEj5 (words=1505)
+2026-01-04 00:28:34,558 [INFO] services.web_search: Fetching URL: https://www.focus-economics.com/country-indicator/venezuela/inflation/
+2026-01-04 00:28:34,796 [WARNING] services.web_search: Non-200 or empty response for URL https://www.focus-economics.com/country-indicator/venezuela/inflation/ (status 403)
+2026-01-04 00:28:34,797 [INFO] services.web_search: Fetching URL: https://en.wikipedia.org/wiki/Hyperinflation_in_Venezuela
+2026-01-04 00:28:35,159 [INFO] services.web_search: Fetched and extracted document from https://en.wikipedia.org/wiki/Hyperinflation_in_Venezuela (words=15381)
+2026-01-04 00:28:35,159 [INFO] services.web_search: Fetching URL: https://tradingeconomics.com/venezuela/indicators
+2026-01-04 00:28:35,603 [INFO] services.web_search: Fetched and extracted document from https://tradingeconomics.com/venezuela/indicators (words=800)
+2026-01-04 00:28:35,603 [INFO] services.web_search: Fetching URL: https://www.wsj.com/world/americas/venezuela-trump-maduro-inflation-0534da9c?gaa_at=eafs&gaa_n=AWEtsqctGr7XlztOu6xsviDZBSWjcfbaDP1u0kxP3QplhaSUwuhc0-0aSoH4&gaa_ts=695a0c13&gaa_sig=kJMX7rz64xVwkwbv8kphg7aSLYW3CgM_BWUm2ePQE_iJ2W-aHO00g0crvz01S-9QONf_dR4k1KQ71gfg-rmKsg%3D%3D
+2026-01-04 00:28:36,045 [WARNING] services.web_search: Non-200 or empty response for URL https://www.wsj.com/world/americas/venezuela-trump-maduro-inflation-0534da9c?gaa_at=eafs&gaa_n=AWEtsqctGr7XlztOu6xsviDZBSWjcfbaDP1u0kxP3QplhaSUwuhc0-0aSoH4&gaa_ts=695a0c13&gaa_sig=kJMX7rz64xVwkwbv8kphg7aSLYW3CgM_BWUm2ePQE_iJ2W-aHO00g0crvz01S-9QONf_dR4k1KQ71gfg-rmKsg%3D%3D (status 401)
+2026-01-04 00:28:36,045 [INFO] services.web_search: Total documents fetched this round: 4
+2026-01-04 00:28:36,046 [INFO] services.web_search: Searching web with Tavily: 'Reports of unrest and protests in Venezuela – key demands and responses from the government' (max_results=6)
+2026-01-04 00:28:37,480 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:28:37,481 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=Ny0LPGeerIo
+2026-01-04 00:28:38,411 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=Ny0LPGeerIo (words=41)
+2026-01-04 00:28:38,411 [INFO] services.web_search: Fetching URL: https://www.amnesty.org/en/location/americas/south-america/venezuela/report-venezuela/
+2026-01-04 00:28:39,524 [INFO] services.web_search: Fetched and extracted document from https://www.amnesty.org/en/location/americas/south-america/venezuela/report-venezuela/ (words=2422)
+2026-01-04 00:28:39,524 [INFO] services.web_search: Fetching URL: https://www.cbsnews.com/losangeles/news/los-angeles-protest-venezuela-attack-maduro-capture/
+2026-01-04 00:28:39,720 [INFO] services.web_search: Fetched and extracted document from https://www.cbsnews.com/losangeles/news/los-angeles-protest-venezuela-attack-maduro-capture/ (words=564)
+2026-01-04 00:28:39,720 [INFO] services.web_search: Fetching URL: https://www.trtworld.com/article/3c758dedd568
+2026-01-04 00:28:40,725 [INFO] services.web_search: Fetched and extracted document from https://www.trtworld.com/article/3c758dedd568 (words=1320)
+2026-01-04 00:28:40,725 [INFO] services.web_search: Fetching URL: https://2017-2021.state.gov/a-democratic-crisis-in-venezuela/
+2026-01-04 00:28:41,115 [INFO] services.web_search: Fetched and extracted document from https://2017-2021.state.gov/a-democratic-crisis-in-venezuela/ (words=20)
+2026-01-04 00:28:41,115 [INFO] services.web_search: Fetching URL: https://www.bbc.com/news/live/c5yqygxe41pt
+2026-01-04 00:28:41,326 [INFO] services.web_search: Fetched and extracted document from https://www.bbc.com/news/live/c5yqygxe41pt (words=3383)
+2026-01-04 00:28:41,326 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:28:41,333 [INFO] processing.text: Chunked 31 documents into 264 passages
+2026-01-04 00:28:41,369 [INFO] processing.text: Ranked 264 passages by relevance to the question
+2026-01-04 00:28:41,370 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=6226)
+2026-01-04 00:28:41,370 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:28:41,370 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:28:49,701 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:28:49,701 [ERROR] agents.evaluator: Ollama evaluation failed: Expecting ',' delimiter: line 20 column 1 (char 894). Raw response: {
+"sufficient": false,
+"rationale": "The context provides a brief snippet about Nicolas Maduro's arrival in New York following his capture in Venezuela and mentions protests in Los Angeles. However, it lacks any detail about the recent events *in* Venezuela itself, such as political developments, economic situation, social unrest, or any significant actions taken by the Venezuelan government or opposition. It only references external reactions and protests related to the capture.",
+"new_queries": ["What are the current political tensions and negotiations occurring within Venezuela?", "What is the current economic situation in Venezuela, including inflation rates and shortages?", "What is the level of social unrest and protests happening within Venezuela?"]
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+. Falling back to heuristic.
+2026-01-04 00:28:49,702 [INFO] pipeline: Evaluation: Heuristic: insufficient passages, domains, or score.
+2026-01-04 00:28:49,703 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-04 00:28:49,705 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-04 00:28:49,706 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:28:53,716 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:28:53,717 [INFO] pipeline: Pipeline finished.
+2026-01-04 00:39:42,790 [INFO] pipeline: Starting pipeline for question: WHo is Nam Hoang who studies at Troy University? using model: gemma3:latest
+2026-01-04 00:39:42,794 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 00:39:42,794 [INFO] pipeline: Queries this iteration: ['WHo is Nam Hoang who studies at Troy University?']
+2026-01-04 00:39:42,795 [INFO] services.web_search: Searching web with Tavily: 'WHo is Nam Hoang who studies at Troy University?' (max_results=6)
+2026-01-04 00:39:44,039 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:39:44,039 [INFO] services.web_search: Fetching URL: https://www.namdhg.dev/
+2026-01-04 00:39:44,221 [WARNING] services.web_search: Error fetching URL https://www.namdhg.dev/: HTTPSConnectionPool(host='www.namdhg.dev', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='www.namdhg.dev', port=443): Failed to resolve 'www.namdhg.dev' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-01-04 00:39:44,222 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/in/nam-nguyen-863639196
+2026-01-04 00:39:44,841 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/in/nam-nguyen-863639196 (status 999)
+2026-01-04 00:39:44,841 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/in/nam-hd/
+2026-01-04 00:39:45,576 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/in/nam-hd/ (status 999)
+2026-01-04 00:39:45,576 [INFO] services.web_search: Fetching URL: https://www.facebook.com/nam.doffy/
+2026-01-04 00:39:45,920 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/nam.doffy/ (words=3)
+2026-01-04 00:39:45,920 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/pub/dir/Nam/Hoang/us-0-United-States
+2026-01-04 00:39:46,496 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/pub/dir/Nam/Hoang/us-0-United-States (status 999)
+2026-01-04 00:39:46,496 [INFO] services.web_search: Fetching URL: https://today.troy.edu/news/troy-students-tackle-real-world-issues-in-annual-hackathon-competition/
+2026-01-04 00:39:48,035 [INFO] services.web_search: Fetched and extracted document from https://today.troy.edu/news/troy-students-tackle-real-world-issues-in-annual-hackathon-competition/ (words=981)
+2026-01-04 00:39:48,036 [INFO] services.web_search: Total documents fetched this round: 2
+2026-01-04 00:39:48,038 [INFO] processing.text: Chunked 2 documents into 3 passages
+2026-01-04 00:39:48,040 [INFO] processing.text: Ranked 3 passages by relevance to the question
+2026-01-04 00:39:48,041 [INFO] processing.text: Selected 3 passages after deduplication and budgeting (chars=7463)
+2026-01-04 00:39:48,041 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:39:48,041 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:39:56,975 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:39:56,976 [INFO] pipeline: Evaluation: The context provides information about a hackathon event at Troy University and mentions several students participating, but it does not include any information about a student named Nam Hoang or his studies.
+2026-01-04 00:39:56,979 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-04 00:39:56,979 [INFO] pipeline: Queries this iteration: ['Search for ‘Troy University Computer Science Hackathon 2024 participants’', 'Search for ‘Nam Hoang Troy University student’', 'Search for ‘Troy University student profiles’']
+2026-01-04 00:39:56,979 [INFO] services.web_search: Searching web with Tavily: 'Search for ‘Troy University Computer Science Hackathon 2024 participants’' (max_results=6)
+2026-01-04 00:39:58,271 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:39:58,271 [INFO] services.web_search: Fetching URL: https://today.troy.edu/tag/hackathon/
+2026-01-04 00:39:59,776 [INFO] services.web_search: Fetched and extracted document from https://today.troy.edu/tag/hackathon/ (words=293)
+2026-01-04 00:39:59,776 [INFO] services.web_search: Fetching URL: https://today.troy.edu/tag/cyber-security/
+2026-01-04 00:40:01,634 [INFO] services.web_search: Fetched and extracted document from https://today.troy.edu/tag/cyber-security/ (words=339)
+2026-01-04 00:40:01,635 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/posts/troy-university-department-of-computer-science-66a79a262_troyhack2024-hackathon-innovation-activity-7250955261786427392-0I3J
+2026-01-04 00:40:02,184 [INFO] services.web_search: Fetched and extracted document from https://www.linkedin.com/posts/troy-university-department-of-computer-science-66a79a262_troyhack2024-hackathon-innovation-activity-7250955261786427392-0I3J (words=331)
+2026-01-04 00:40:02,184 [INFO] services.web_search: Fetching URL: https://today.troy.edu/news/teams-create-real-world-solutions-in-annual-troy-hackathon/
+2026-01-04 00:40:03,866 [INFO] services.web_search: Fetched and extracted document from https://today.troy.edu/news/teams-create-real-world-solutions-in-annual-troy-hackathon/ (words=868)
+2026-01-04 00:40:03,866 [INFO] services.web_search: Fetching URL: https://today.troy.edu/news/troyhack-challenges-educates-students-in-technology/
+2026-01-04 00:40:05,379 [INFO] services.web_search: Fetched and extracted document from https://today.troy.edu/news/troyhack-challenges-educates-students-in-technology/ (words=495)
+2026-01-04 00:40:05,379 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:40:05,380 [INFO] services.web_search: Searching web with Tavily: 'Search for ‘Nam Hoang Troy University student’' (max_results=6)
+2026-01-04 00:40:06,419 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:40:06,420 [INFO] services.web_search: Fetching URL: https://www.namdhg.dev/
+2026-01-04 00:40:06,422 [WARNING] services.web_search: Error fetching URL https://www.namdhg.dev/: HTTPSConnectionPool(host='www.namdhg.dev', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='www.namdhg.dev', port=443): Failed to resolve 'www.namdhg.dev' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-01-04 00:40:06,422 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/pub/dir/Nam/Hoang
+2026-01-04 00:40:06,907 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/pub/dir/Nam/Hoang (status 999)
+2026-01-04 00:40:06,907 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/in/nam-nguyen-863639196
+2026-01-04 00:40:07,436 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/in/nam-nguyen-863639196 (status 999)
+2026-01-04 00:40:07,436 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/in/nam-hd/
+2026-01-04 00:40:08,241 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/in/nam-hd/ (status 999)
+2026-01-04 00:40:08,241 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/pub/dir/Nam/Hoang/us-0-United-States
+2026-01-04 00:40:08,817 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/pub/dir/Nam/Hoang/us-0-United-States (status 999)
+2026-01-04 00:40:08,817 [INFO] services.web_search: Total documents fetched this round: 1
+2026-01-04 00:40:08,817 [INFO] services.web_search: Searching web with Tavily: 'Search for ‘Troy University student profiles’' (max_results=6)
+2026-01-04 00:40:09,873 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:40:09,873 [INFO] services.web_search: Fetching URL: https://today.troy.edu/tag/student-profiles/
+2026-01-04 00:40:11,306 [INFO] services.web_search: Fetched and extracted document from https://today.troy.edu/tag/student-profiles/ (words=360)
+2026-01-04 00:40:11,306 [INFO] services.web_search: Fetching URL: https://one.troy.edu/public/pages/portal-overview
+2026-01-04 00:40:11,731 [INFO] services.web_search: Fetched and extracted document from https://one.troy.edu/public/pages/portal-overview (words=2)
+2026-01-04 00:40:11,732 [INFO] services.web_search: Fetching URL: https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=102368
+2026-01-04 00:40:13,229 [INFO] services.web_search: Fetched and extracted document from https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=102368 (words=79)
+2026-01-04 00:40:13,229 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/school/troy-university/
+2026-01-04 00:40:13,873 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/school/troy-university/ (status 999)
+2026-01-04 00:40:13,874 [INFO] services.web_search: Fetching URL: https://www.troy.edu/a-to-z.html
+2026-01-04 00:40:14,372 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/a-to-z.html (words=4926)
+2026-01-04 00:40:14,372 [INFO] services.web_search: Fetching URL: https://troy.elluciancrmrecruit.com/Apply/Account/Login
+2026-01-04 00:40:15,059 [INFO] services.web_search: Fetched and extracted document from https://troy.elluciancrmrecruit.com/Apply/Account/Login (words=123)
+2026-01-04 00:40:15,059 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:40:15,063 [INFO] processing.text: Chunked 12 documents into 27 passages
+2026-01-04 00:40:15,073 [INFO] processing.text: Ranked 27 passages by relevance to the question
+2026-01-04 00:40:15,073 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=6990)
+2026-01-04 00:40:15,074 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:40:15,074 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:40:19,760 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:40:19,762 [INFO] pipeline: Evaluation: The context only provides links related to Troy University but doesn't contain any information about a student named Nam Hoang. It's a directory of university resources and departments, not a biography or student directory.
+2026-01-04 00:40:19,765 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-04 00:40:19,765 [INFO] pipeline: Queries this iteration: ['Troy University student directory', 'Troy University faculty directory', 'Troy University student profiles']
+2026-01-04 00:40:19,765 [INFO] services.web_search: Searching web with Tavily: 'Troy University student directory' (max_results=6)
+2026-01-04 00:40:20,802 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:40:20,803 [INFO] services.web_search: Fetching URL: https://troytrojans.com/staff-directory
+2026-01-04 00:40:22,446 [INFO] services.web_search: Fetched and extracted document from https://troytrojans.com/staff-directory (words=3068)
+2026-01-04 00:40:22,446 [INFO] services.web_search: Fetching URL: https://www.troy.edu/contact.html
+2026-01-04 00:40:22,773 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/contact.html (words=99)
+2026-01-04 00:40:22,773 [INFO] services.web_search: Fetching URL: https://www.troy.edu/about-us/dothan-campus/directory.html
+2026-01-04 00:40:23,130 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/about-us/dothan-campus/directory.html (words=982)
+2026-01-04 00:40:23,130 [INFO] services.web_search: Fetching URL: https://www.troy.edu/
+2026-01-04 00:40:23,658 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/ (words=738)
+2026-01-04 00:40:23,659 [INFO] services.web_search: Fetching URL: https://www.suscc.edu/programs/troy
+2026-01-04 00:40:24,059 [INFO] services.web_search: Fetched and extracted document from https://www.suscc.edu/programs/troy (words=285)
+2026-01-04 00:40:24,059 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:40:24,060 [INFO] services.web_search: Searching web with Tavily: 'Troy University faculty directory' (max_results=6)
+2026-01-04 00:40:25,059 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:40:25,059 [INFO] services.web_search: Fetching URL: https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/social-science/faculty-staff.html
+2026-01-04 00:40:25,469 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/social-science/faculty-staff.html (words=3207)
+2026-01-04 00:40:25,469 [INFO] services.web_search: Fetching URL: https://www.troy.edu/academics/colleges-schools/college-science-engineering/departments/computer-science/faculty-staff.html
+2026-01-04 00:40:25,755 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/academics/colleges-schools/college-science-engineering/departments/computer-science/faculty-staff.html (words=381)
+2026-01-04 00:40:25,756 [INFO] services.web_search: Fetching URL: https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/political-science/faculty-staff.html
+2026-01-04 00:40:26,070 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/political-science/faculty-staff.html (words=2983)
+2026-01-04 00:40:26,070 [INFO] services.web_search: Fetching URL: https://www.troy.edu/academics/colleges-schools/college-science-engineering/departments/geospatial-informatics/about/faculty.html
+2026-01-04 00:40:26,383 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/academics/colleges-schools/college-science-engineering/departments/geospatial-informatics/about/faculty.html (words=77)
+2026-01-04 00:40:26,383 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 00:40:26,384 [INFO] services.web_search: Searching web with Tavily: 'Troy University student profiles' (max_results=6)
+2026-01-04 00:40:27,560 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 00:40:27,560 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/school/troy-university/
+2026-01-04 00:40:28,378 [WARNING] services.web_search: Non-200 or empty response for URL https://www.linkedin.com/school/troy-university/ (status 999)
+2026-01-04 00:40:28,379 [INFO] services.web_search: Fetching URL: https://troy.meritpages.com/updates?page=11
+2026-01-04 00:40:29,197 [INFO] services.web_search: Fetched and extracted document from https://troy.meritpages.com/updates?page=11 (words=1724)
+2026-01-04 00:40:29,197 [INFO] services.web_search: Fetching URL: https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/social-science/alumni-spotlight.html
+2026-01-04 00:40:29,551 [INFO] services.web_search: Fetched and extracted document from https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/social-science/alumni-spotlight.html (words=2328)
+2026-01-04 00:40:29,551 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 00:40:29,553 [INFO] processing.text: Chunked 23 documents into 71 passages
+2026-01-04 00:40:29,562 [INFO] processing.text: Ranked 71 passages by relevance to the question
+2026-01-04 00:40:29,562 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=6990)
+2026-01-04 00:40:29,563 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 00:40:29,563 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:40:33,500 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:40:33,502 [INFO] pipeline: Evaluation: The context only provides a list of webpages related to Troy University. It does not contain any information about students, faculty, or individuals studying at the university, including Nam Hoang.
+2026-01-04 00:40:33,503 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-04 00:40:33,506 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-04 00:40:33,506 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 00:40:35,540 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 00:40:35,541 [INFO] pipeline: Pipeline finished.
+2026-01-04 07:26:42,012 [INFO] pipeline: Starting pipeline for question: What is ISODS? using model: gemma3:latest
+2026-01-04 07:26:42,018 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 07:26:42,018 [INFO] pipeline: Queries this iteration: ['What is ISODS?']
+2026-01-04 07:26:42,019 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS?' (max_results=6)
+2026-01-04 07:26:43,366 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 07:26:43,366 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/
+2026-01-04 07:26:44,048 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/ (words=9)
+2026-01-04 07:26:44,048 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf
+2026-01-04 07:26:44,241 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf (status 403)
+2026-01-04 07:26:44,242 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isodsvi/
+2026-01-04 07:26:44,735 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isodsvi/ (words=4)
+2026-01-04 07:26:44,735 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/photos/d41d8cd9/1165403748964916/
+2026-01-04 07:26:45,142 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/photos/d41d8cd9/1165403748964916/ (words=1)
+2026-01-04 07:26:45,142 [INFO] services.web_search: Fetching URL: https://portal.isods.org/opportunities
+2026-01-04 07:26:46,449 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/opportunities (words=265)
+2026-01-04 07:26:46,449 [INFO] services.web_search: Fetching URL: https://portal.isods.org/
+2026-01-04 07:26:47,199 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/ (words=364)
+2026-01-04 07:26:47,199 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 07:26:47,202 [INFO] processing.text: Chunked 5 documents into 2 passages
+2026-01-04 07:26:47,208 [INFO] processing.text: Ranked 2 passages by relevance to the question
+2026-01-04 07:26:47,209 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=4296)
+2026-01-04 07:26:47,209 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 07:26:47,209 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 07:26:56,303 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 07:26:56,308 [INFO] pipeline: Evaluation: The context provides only a very basic overview of the International Society of Data Scientists (ISODS), outlining its purpose and some current activities. It doesn't delve into the specifics of what ISODS *is*, its mission, its activities beyond partnerships, or its membership. It's essentially just a homepage landing page.
+2026-01-04 07:26:56,312 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-04 07:26:56,312 [INFO] pipeline: Queries this iteration: ['What are the specific goals and mission of the International Society of Data Scientists?', 'What types of activities does ISODS engage in beyond partnerships (e.g., conferences, publications)?', 'What is the membership structure and criteria for joining ISODS?']
+2026-01-04 07:26:56,313 [INFO] services.web_search: Searching web with Tavily: 'What are the specific goals and mission of the International Society of Data Scientists?' (max_results=6)
+2026-01-04 07:26:57,291 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 07:26:57,291 [INFO] services.web_search: Fetching URL: https://app.candid.org/profile/9698332/international-society-for-data-science-and-analytics-82-4382236
+2026-01-04 07:26:57,996 [INFO] services.web_search: Fetched and extracted document from https://app.candid.org/profile/9698332/international-society-for-data-science-and-analytics-82-4382236 (words=4)
+2026-01-04 07:26:57,996 [INFO] services.web_search: Fetching URL: https://tidsaglobal.org/about-us
+2026-01-04 07:26:58,440 [INFO] services.web_search: Fetched and extracted document from https://tidsaglobal.org/about-us (words=1620)
+2026-01-04 07:26:58,440 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/company/isods
+2026-01-04 07:26:59,521 [INFO] services.web_search: Fetched and extracted document from https://www.linkedin.com/company/isods (words=1850)
+2026-01-04 07:26:59,521 [INFO] services.web_search: Fetching URL: https://isi-web.org/our-vision
+2026-01-04 07:27:00,435 [INFO] services.web_search: Fetched and extracted document from https://isi-web.org/our-vision (words=787)
+2026-01-04 07:27:00,435 [INFO] services.web_search: Fetching URL: https://career360.snhu.edu/organizations/the-international-society-for-data-science-and-analytics-isdsa/
+2026-01-04 07:27:01,410 [INFO] services.web_search: Fetched and extracted document from https://career360.snhu.edu/organizations/the-international-society-for-data-science-and-analytics-isdsa/ (words=103)
+2026-01-04 07:27:01,410 [INFO] services.web_search: Fetching URL: https://isi-web.org/committee/special-interest-group-data-science
+2026-01-04 07:27:03,004 [INFO] services.web_search: Fetched and extracted document from https://isi-web.org/committee/special-interest-group-data-science (words=457)
+2026-01-04 07:27:03,004 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 07:27:03,005 [INFO] services.web_search: Searching web with Tavily: 'What types of activities does ISODS engage in beyond partnerships (e.g., conferences, publications)?' (max_results=6)
+2026-01-04 07:27:04,288 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 07:27:04,288 [INFO] services.web_search: Fetching URL: https://www.springernature.com/gp/librarians/news-events/all-news-articles/industry-news-initiatives/partnering-to-deliver-sdgs/17990758
+2026-01-04 07:27:05,067 [INFO] services.web_search: Fetched and extracted document from https://www.springernature.com/gp/librarians/news-events/all-news-articles/industry-news-initiatives/partnering-to-deliver-sdgs/17990758 (words=2044)
+2026-01-04 07:27:05,067 [INFO] services.web_search: Fetching URL: https://www.facultyfocus.com/articles/teaching-and-learning/beyond-the-classroom-establishing-partnerships-for-real-world-learning-and-student-success/
+2026-01-04 07:27:05,672 [INFO] services.web_search: Fetched and extracted document from https://www.facultyfocus.com/articles/teaching-and-learning/beyond-the-classroom-establishing-partnerships-for-real-world-learning-and-student-success/ (words=1716)
+2026-01-04 07:27:05,672 [INFO] services.web_search: Fetching URL: https://data.org/playbooks/data-science-for-social-impact-in-higher-education/c/engaging-external-partners/
+2026-01-04 07:27:06,850 [INFO] services.web_search: Fetched and extracted document from https://data.org/playbooks/data-science-for-social-impact-in-higher-education/c/engaging-external-partners/ (words=651)
+2026-01-04 07:27:06,851 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Vincent-Wayne-Mitchell/publication/300017838_Beyond_a_Dyadic_View_on_Value_Co-Creation_a_Multi-Actor_Perspective_from_Business_Networking_Events/links/5e83b44a4585150839b2bb8f/Beyond-a-Dyadic-View-on-Value-Co-Creation-a-Multi-Actor-Perspective-from-Business-Networking-Events.pdf
+2026-01-04 07:27:07,012 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Vincent-Wayne-Mitchell/publication/300017838_Beyond_a_Dyadic_View_on_Value_Co-Creation_a_Multi-Actor_Perspective_from_Business_Networking_Events/links/5e83b44a4585150839b2bb8f/Beyond-a-Dyadic-View-on-Value-Co-Creation-a-Multi-Actor-Perspective-from-Business-Networking-Events.pdf (status 403)
+2026-01-04 07:27:07,012 [INFO] services.web_search: Fetching URL: https://www.itu.int/dms_pub/itu-s/opb/gen/S-GEN-UNACT-2022-PDF-E.pdf
+2026-01-04 07:27:15,863 [INFO] services.web_search: Fetched and extracted document from https://www.itu.int/dms_pub/itu-s/opb/gen/S-GEN-UNACT-2022-PDF-E.pdf (words=245039)
+2026-01-04 07:27:15,863 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 07:27:15,864 [INFO] services.web_search: Searching web with Tavily: 'What is the membership structure and criteria for joining ISODS?' (max_results=6)
+2026-01-04 07:27:16,749 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 07:27:16,749 [INFO] services.web_search: Fetching URL: https://tts.org/isodp-join
+2026-01-04 07:27:17,608 [INFO] services.web_search: Fetched and extracted document from https://tts.org/isodp-join (words=824)
+2026-01-04 07:27:17,609 [INFO] services.web_search: Fetching URL: https://tts.org/40-isodp/isodp-members-area/451-isodp-about-isodp-membership
+2026-01-04 07:27:18,135 [INFO] services.web_search: Fetched and extracted document from https://tts.org/40-isodp/isodp-members-area/451-isodp-about-isodp-membership (words=439)
+2026-01-04 07:27:18,135 [INFO] services.web_search: Fetching URL: https://www.isds.org/member-center/join-renew/membership-categories
+2026-01-04 07:27:18,854 [INFO] services.web_search: Fetched and extracted document from https://www.isds.org/member-center/join-renew/membership-categories (words=973)
+2026-01-04 07:27:18,854 [INFO] services.web_search: Fetching URL: https://portal.isods.org/about
+2026-01-04 07:27:19,702 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/about (words=1940)
+2026-01-04 07:27:19,703 [INFO] services.web_search: Fetching URL: https://www.nisod.org/membership/sec-criteria-and-terms/
+2026-01-04 07:27:21,091 [INFO] services.web_search: Fetched and extracted document from https://www.nisod.org/membership/sec-criteria-and-terms/ (words=429)
+2026-01-04 07:27:21,091 [INFO] services.web_search: Fetching URL: https://www.ischools.org/become-a-member
+2026-01-04 07:27:21,628 [INFO] services.web_search: Fetched and extracted document from https://www.ischools.org/become-a-member (words=616)
+2026-01-04 07:27:21,629 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 07:27:21,664 [INFO] processing.text: Chunked 21 documents into 655 passages
+2026-01-04 07:27:21,822 [INFO] processing.text: Ranked 655 passages by relevance to the question
+2026-01-04 07:27:21,823 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=7006)
+2026-01-04 07:27:21,823 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 07:27:21,823 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 07:27:28,031 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 07:27:28,032 [INFO] pipeline: Evaluation: The context provides a reasonable overview of ISODS, explaining its purpose (a professional society for data scientists), its certification program with standardized exams, and its impact on establishing global AI competency assessments, particularly in Vietnam.
+2026-01-04 07:27:28,034 [INFO] pipeline: Evaluator judged context sufficient on iteration 2; stopping search.
+2026-01-04 07:27:28,036 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-04 07:27:28,036 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 07:27:30,838 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 07:27:30,840 [INFO] pipeline: Pipeline finished.
+2026-01-04 09:23:39,904 [INFO] pipeline: Starting pipeline for question: What is ISODS? using model: gemma3:latest
+2026-01-04 09:23:39,908 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 09:23:39,908 [INFO] pipeline: Queries this iteration: ['What is ISODS?']
+2026-01-04 09:23:39,909 [INFO] services.web_search: Searching web with Tavily: 'What is ISODS?' (max_results=6)
+2026-01-04 09:23:40,958 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:23:40,958 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/
+2026-01-04 09:23:41,647 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/ (words=9)
+2026-01-04 09:23:41,647 [INFO] services.web_search: Fetching URL: https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf
+2026-01-04 09:23:41,850 [WARNING] services.web_search: Non-200 or empty response for URL https://www.researchgate.net/profile/Noah-Gardner-2/publication/359706579_ISODS_An_ISODATA-Based_Initial_Centroid_Algorithm/links/6249fd418068956f3c66942c/ISODS-An-ISODATA-Based-Initial-Centroid-Algorithm.pdf (status 403)
+2026-01-04 09:23:41,850 [INFO] services.web_search: Fetching URL: https://www.facebook.com/isods.org/photos/d41d8cd9/1165403748964916/
+2026-01-04 09:23:42,270 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/isods.org/photos/d41d8cd9/1165403748964916/ (words=1)
+2026-01-04 09:23:42,271 [INFO] services.web_search: Fetching URL: https://portal.isods.org/opportunities
+2026-01-04 09:23:43,760 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/opportunities (words=265)
+2026-01-04 09:23:43,760 [INFO] services.web_search: Fetching URL: https://portal.isods.org/
+2026-01-04 09:23:44,782 [INFO] services.web_search: Fetched and extracted document from https://portal.isods.org/ (words=364)
+2026-01-04 09:23:44,782 [INFO] services.web_search: Fetching URL: https://www.linkedin.com/company/isods
+2026-01-04 09:23:45,731 [INFO] services.web_search: Fetched and extracted document from https://www.linkedin.com/company/isods (words=1850)
+2026-01-04 09:23:45,731 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 09:23:45,732 [INFO] processing.text: Chunked 5 documents into 7 passages
+2026-01-04 09:23:45,738 [INFO] processing.text: Ranked 7 passages by relevance to the question
+2026-01-04 09:23:45,738 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=7006)
+2026-01-04 09:23:45,738 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 09:23:45,738 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 09:23:56,054 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 09:23:56,059 [INFO] pipeline: Evaluation: The context provides a good overview of ISODS, explaining its purpose as a professional society, the structure of its exams (levels and subject matter), and its role in establishing global AI competency standards, particularly in Vietnam. It's enough to provide a basic understanding of what ISODS is.
+2026-01-04 09:23:56,060 [INFO] pipeline: Evaluator judged context sufficient on iteration 1; stopping search.
+2026-01-04 09:23:56,063 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-04 09:23:56,064 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 09:23:59,135 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 09:23:59,136 [INFO] pipeline: Pipeline finished.
+2026-01-04 09:26:16,432 [INFO] pipeline: Starting pipeline for question: WHat is the latest result of Manchester United game? using model: gemma3:latest
+2026-01-04 09:26:16,434 [INFO] pipeline: === Iteration 1/3 ===
+2026-01-04 09:26:16,434 [INFO] pipeline: Queries this iteration: ['WHat is the latest result of Manchester United game?']
+2026-01-04 09:26:16,435 [INFO] services.web_search: Searching web with Tavily: 'WHat is the latest result of Manchester United game?' (max_results=6)
+2026-01-04 09:26:17,536 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:17,536 [INFO] services.web_search: Fetching URL: https://www.livescore.com/en/football/team/manchester-united/2810/overview/
+2026-01-04 09:26:18,193 [INFO] services.web_search: Fetched and extracted document from https://www.livescore.com/en/football/team/manchester-united/2810/overview/ (words=229)
+2026-01-04 09:26:18,193 [INFO] services.web_search: Fetching URL: https://www.standard.co.uk/sport/football/leeds-vs-man-utd-live-stream-latest-score-updates-result-premier-league-b1264857.html
+2026-01-04 09:26:18,712 [INFO] services.web_search: Fetched and extracted document from https://www.standard.co.uk/sport/football/leeds-vs-man-utd-live-stream-latest-score-updates-result-premier-league-b1264857.html (words=627)
+2026-01-04 09:26:18,713 [INFO] services.web_search: Fetching URL: https://www.nbcsports.com/soccer/news/leeds-vs-manchester-united-live-updates-watch-live-score-highlights-news
+2026-01-04 09:26:19,046 [INFO] services.web_search: Fetched and extracted document from https://www.nbcsports.com/soccer/news/leeds-vs-manchester-united-live-updates-watch-live-score-highlights-news (words=1383)
+2026-01-04 09:26:19,046 [INFO] services.web_search: Fetching URL: https://www.manutd.com/en/matches/fixtures-results
+2026-01-04 09:26:19,351 [INFO] services.web_search: Fetched and extracted document from https://www.manutd.com/en/matches/fixtures-results (words=20)
+2026-01-04 09:26:19,352 [INFO] services.web_search: Fetching URL: https://www.skysports.com/football/news/11095/13489625/leeds-1-1-man-utd-matheus-cunha-cancels-out-brenden-aaronson-strike-but-ruben-amorims-side-held-again
+2026-01-04 09:26:19,787 [INFO] services.web_search: Fetched and extracted document from https://www.skysports.com/football/news/11095/13489625/leeds-1-1-man-utd-matheus-cunha-cancels-out-brenden-aaronson-strike-but-ruben-amorims-side-held-again (words=1201)
+2026-01-04 09:26:19,787 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/team/_/id/360/manchester-united
+2026-01-04 09:26:20,537 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/team/_/id/360/manchester-united (words=601)
+2026-01-04 09:26:20,537 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 09:26:20,539 [INFO] processing.text: Chunked 6 documents into 12 passages
+2026-01-04 09:26:20,542 [INFO] processing.text: Ranked 12 passages by relevance to the question
+2026-01-04 09:26:20,542 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=5499)
+2026-01-04 09:26:20,542 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 09:26:20,542 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 09:26:27,492 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 09:26:27,494 [INFO] pipeline: Evaluation: The context provides information about a recent Leeds vs Manchester United game, specifically detailing the score and a key moment (Cunha's goal). However, it doesn't state the *latest* result. It also doesn't indicate the current date of the game, making it impossible to determine if this is the most recent match or not.
+2026-01-04 09:26:27,499 [INFO] pipeline: === Iteration 2/3 ===
+2026-01-04 09:26:27,499 [INFO] pipeline: Queries this iteration: ['What was the final score of the Manchester United game?', 'When was the Leeds vs Manchester United game played?', 'Can you provide a list of all Manchester United’s recent Premier League results?']
+2026-01-04 09:26:27,499 [INFO] services.web_search: Searching web with Tavily: 'What was the final score of the Manchester United game?' (max_results=6)
+2026-01-04 09:26:29,081 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:29,081 [INFO] services.web_search: Fetching URL: https://www.facebook.com/groups/494611591148003/posts/1951349118807569/
+2026-01-04 09:26:29,518 [INFO] services.web_search: Fetched and extracted document from https://www.facebook.com/groups/494611591148003/posts/1951349118807569/ (words=9)
+2026-01-04 09:26:29,518 [INFO] services.web_search: Fetching URL: https://sports.yahoo.com/articles/match-report-leeds-united-1-142500447.html
+2026-01-04 09:26:30,214 [INFO] services.web_search: Fetched and extracted document from https://sports.yahoo.com/articles/match-report-leeds-united-1-142500447.html (words=1603)
+2026-01-04 09:26:30,214 [INFO] services.web_search: Fetching URL: https://www.theguardian.com/football/2026/jan/04/leeds-manchester-united-premier-league-match-report
+2026-01-04 09:26:30,617 [INFO] services.web_search: Fetched and extracted document from https://www.theguardian.com/football/2026/jan/04/leeds-manchester-united-premier-league-match-report (words=640)
+2026-01-04 09:26:30,617 [INFO] services.web_search: Fetching URL: https://www.reddit.com/r/ManchesterUnited/comments/1q3rd8o/post_match_thread_leeds_united_1_1_manchester/
+2026-01-04 09:26:31,335 [INFO] services.web_search: Fetched and extracted document from https://www.reddit.com/r/ManchesterUnited/comments/1q3rd8o/post_match_thread_leeds_united_1_1_manchester/ (words=356)
+2026-01-04 09:26:31,335 [INFO] services.web_search: Fetching URL: https://www.independent.co.uk/sport/football/leeds-man-utd-live-stream-score-premier-league-result-b2894186.html
+2026-01-04 09:26:31,692 [INFO] services.web_search: Fetched and extracted document from https://www.independent.co.uk/sport/football/leeds-man-utd-live-stream-score-premier-league-result-b2894186.html (words=1247)
+2026-01-04 09:26:31,692 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 09:26:31,693 [INFO] services.web_search: Searching web with Tavily: 'When was the Leeds vs Manchester United game played?' (max_results=6)
+2026-01-04 09:26:32,563 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:32,564 [INFO] services.web_search: Fetching URL: https://www.manutd.com/en/matches/matchcenter/leeds-vs-man-utd-match-2562090
+2026-01-04 09:26:33,364 [INFO] services.web_search: Fetched and extracted document from https://www.manutd.com/en/matches/matchcenter/leeds-vs-man-utd-match-2562090 (words=27)
+2026-01-04 09:26:33,365 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/report/_/gameId/740791
+2026-01-04 09:26:33,519 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/report/_/gameId/740791 (words=953)
+2026-01-04 09:26:33,519 [INFO] services.web_search: Fetching URL: https://www.youtube.com/watch?v=uc1z91oXOgI
+2026-01-04 09:26:34,445 [INFO] services.web_search: Fetched and extracted document from https://www.youtube.com/watch?v=uc1z91oXOgI (words=42)
+2026-01-04 09:26:34,445 [INFO] services.web_search: Fetching URL: https://www.premierleague.com/en/match/2562090/leeds-united-vs-manchester-united?tab=recap
+2026-01-04 09:26:34,843 [INFO] services.web_search: Fetched and extracted document from https://www.premierleague.com/en/match/2562090/leeds-united-vs-manchester-united?tab=recap (words=16)
+2026-01-04 09:26:34,843 [INFO] services.web_search: Fetching URL: https://www.rte.ie/sport/soccer/2026/0104/1551400-premier-league-leeds-v-manchester-united-updates/
+2026-01-04 09:26:35,373 [INFO] services.web_search: Fetched and extracted document from https://www.rte.ie/sport/soccer/2026/0104/1551400-premier-league-leeds-v-manchester-united-updates/ (words=40)
+2026-01-04 09:26:35,374 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 09:26:35,374 [INFO] services.web_search: Searching web with Tavily: 'Can you provide a list of all Manchester United’s recent Premier League results?' (max_results=6)
+2026-01-04 09:26:36,217 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:36,217 [INFO] services.web_search: Fetching URL: https://www.statmuse.com/fc/ask/man-utd-last-10-games-results
+2026-01-04 09:26:36,962 [INFO] services.web_search: Fetched and extracted document from https://www.statmuse.com/fc/ask/man-utd-last-10-games-results (words=1646)
+2026-01-04 09:26:36,962 [INFO] services.web_search: Fetching URL: https://www.livescore.com/en/football/team/manchester-united/2810/results/
+2026-01-04 09:26:37,310 [INFO] services.web_search: Fetched and extracted document from https://www.livescore.com/en/football/team/manchester-united/2810/results/ (words=181)
+2026-01-04 09:26:37,311 [INFO] services.web_search: Fetching URL: https://www.flashscore.com/team/manchester-united/ppjDR086/results/
+2026-01-04 09:26:38,363 [INFO] services.web_search: Fetched and extracted document from https://www.flashscore.com/team/manchester-united/ppjDR086/results/ (words=890)
+2026-01-04 09:26:38,363 [INFO] services.web_search: Fetching URL: https://www.premierleague.com/en/clubs/1/manchester-united/overview
+2026-01-04 09:26:38,859 [INFO] services.web_search: Fetched and extracted document from https://www.premierleague.com/en/clubs/1/manchester-united/overview (words=15)
+2026-01-04 09:26:38,859 [INFO] services.web_search: Fetching URL: https://www.premierleague.com/en/clubs/1/manchester-united/matches
+2026-01-04 09:26:39,000 [INFO] services.web_search: Fetched and extracted document from https://www.premierleague.com/en/clubs/1/manchester-united/matches (words=13)
+2026-01-04 09:26:39,000 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 09:26:39,005 [INFO] processing.text: Chunked 21 documents into 33 passages
+2026-01-04 09:26:39,019 [INFO] processing.text: Ranked 33 passages by relevance to the question
+2026-01-04 09:26:39,020 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=5499)
+2026-01-04 09:26:39,020 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 09:26:39,020 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 09:26:44,528 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 09:26:44,530 [INFO] pipeline: Evaluation: The context provides the result of the Leeds vs Manchester United game (1-1), but doesn't state the date or time of the match. Therefore, it doesn't provide the 'latest result' as the question requests.
+2026-01-04 09:26:44,532 [INFO] pipeline: === Iteration 3/3 ===
+2026-01-04 09:26:44,532 [INFO] pipeline: Queries this iteration: ['What was the date of the Leeds vs Manchester United game?', 'What time did the Leeds vs Manchester United game take place?', 'Can you provide a link to the official match report for the Leeds vs Manchester United game?']
+2026-01-04 09:26:44,532 [INFO] services.web_search: Searching web with Tavily: 'What was the date of the Leeds vs Manchester United game?' (max_results=6)
+2026-01-04 09:26:45,778 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:45,778 [INFO] services.web_search: Fetching URL: https://www.reddit.com/r/reddevils/comments/1q31ggf/pre_match_thread_premier_league_game_20_leeds/
+2026-01-04 09:26:46,092 [INFO] services.web_search: Fetched and extracted document from https://www.reddit.com/r/reddevils/comments/1q31ggf/pre_match_thread_premier_league_game_20_leeds/ (words=276)
+2026-01-04 09:26:46,092 [INFO] services.web_search: Fetching URL: https://www.dazn.com/en-US/news/soccer/leeds-united-vs-manchester-united-preview-prediction-premier-league-match-team-news-how-to-watch/4yevn0fp53yt1nl7nantuoauw
+2026-01-04 09:26:46,856 [INFO] services.web_search: Fetched and extracted document from https://www.dazn.com/en-US/news/soccer/leeds-united-vs-manchester-united-preview-prediction-premier-league-match-team-news-how-to-watch/4yevn0fp53yt1nl7nantuoauw (words=863)
+2026-01-04 09:26:46,856 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/match/_/gameId/740791/manchester-united-leeds-united
+2026-01-04 09:26:47,157 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/match/_/gameId/740791/manchester-united-leeds-united (words=650)
+2026-01-04 09:26:47,158 [INFO] services.web_search: Fetching URL: https://www.firstpost.com/sports/football-news/leeds-vs-manchester-united-live-score-lee-vs-mun-updates-premier-league-liveblog-13965409.html
+2026-01-04 09:26:47,515 [WARNING] services.web_search: Non-200 or empty response for URL https://www.firstpost.com/sports/football-news/leeds-vs-manchester-united-live-score-lee-vs-mun-updates-premier-league-liveblog-13965409.html (status 403)
+2026-01-04 09:26:47,516 [INFO] services.web_search: Fetching URL: https://www.leedsunited.com/en/matches/mens/leeds-united-v-manchester-united-english-premier-league-20260104
+2026-01-04 09:26:49,159 [INFO] services.web_search: Fetched and extracted document from https://www.leedsunited.com/en/matches/mens/leeds-united-v-manchester-united-english-premier-league-20260104 (words=15)
+2026-01-04 09:26:49,159 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 09:26:49,160 [INFO] services.web_search: Searching web with Tavily: 'What time did the Leeds vs Manchester United game take place?' (max_results=6)
+2026-01-04 09:26:50,202 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:50,203 [INFO] services.web_search: Fetching URL: https://athlonsports.com/soccer/leeds-united-manchester-united-lineups-live-streaming-how-where-watch-tv
+2026-01-04 09:26:50,486 [WARNING] services.web_search: Non-200 or empty response for URL https://athlonsports.com/soccer/leeds-united-manchester-united-lineups-live-streaming-how-where-watch-tv (status 403)
+2026-01-04 09:26:50,487 [INFO] services.web_search: Fetching URL: https://www.standard.co.uk/sport/football/leeds-vs-man-utd-prediction-kick-off-time-tv-live-stream-team-news-latest-h2h-results-odds-premier-league-2025-preview-b1264647.html
+2026-01-04 09:26:50,810 [INFO] services.web_search: Fetched and extracted document from https://www.standard.co.uk/sport/football/leeds-vs-man-utd-prediction-kick-off-time-tv-live-stream-team-news-latest-h2h-results-odds-premier-league-2025-preview-b1264647.html (words=576)
+2026-01-04 09:26:50,811 [INFO] services.web_search: Fetching URL: https://www.cnet.com/tech/services-and-software/premier-league-soccer-stream-leeds-vs-man-united-live-from-anywhere/
+2026-01-04 09:26:51,429 [INFO] services.web_search: Fetched and extracted document from https://www.cnet.com/tech/services-and-software/premier-league-soccer-stream-leeds-vs-man-united-live-from-anywhere/ (words=1359)
+2026-01-04 09:26:51,429 [INFO] services.web_search: Fetching URL: https://www.manutd.com/en/news/detail/how-to-watch-and-follow-leeds-v-man-utd-4-january-2026
+2026-01-04 09:26:51,730 [INFO] services.web_search: Fetched and extracted document from https://www.manutd.com/en/news/detail/how-to-watch-and-follow-leeds-v-man-utd-4-january-2026 (words=973)
+2026-01-04 09:26:51,730 [INFO] services.web_search: Fetching URL: https://www.espn.com/soccer/story/_/id/47480297/leeds-united-manchester-united-tv-channel-kick-live-stream-referee-injury-team-news-premier-league-2025-26
+2026-01-04 09:26:51,960 [INFO] services.web_search: Fetched and extracted document from https://www.espn.com/soccer/story/_/id/47480297/leeds-united-manchester-united-tv-channel-kick-live-stream-referee-injury-team-news-premier-league-2025-26 (words=1456)
+2026-01-04 09:26:51,961 [INFO] services.web_search: Total documents fetched this round: 5
+2026-01-04 09:26:51,961 [INFO] services.web_search: Searching web with Tavily: 'Can you provide a link to the official match report for the Leeds vs Manchester United game?' (max_results=6)
+2026-01-04 09:26:52,770 [INFO] services.web_search: Tavily returned 6 search results
+2026-01-04 09:26:52,771 [INFO] services.web_search: Fetching URL: https://www.manutd.com/en/news/detail/match-report-from-leeds-vs-man-utd-in-the-premier-league-04-january-2026
+2026-01-04 09:26:53,003 [INFO] services.web_search: Fetched and extracted document from https://www.manutd.com/en/news/detail/match-report-from-leeds-vs-man-utd-in-the-premier-league-04-january-2026 (words=1069)
+2026-01-04 09:26:53,003 [INFO] services.web_search: Fetching URL: https://www.mirror.co.uk/sport/football/match-reports/leeds-man-utd-premier-league-36495328
+2026-01-04 09:26:53,392 [INFO] services.web_search: Fetched and extracted document from https://www.mirror.co.uk/sport/football/match-reports/leeds-man-utd-premier-league-36495328 (words=1061)
+2026-01-04 09:26:53,392 [INFO] services.web_search: Fetching URL: https://www.leedsunited.com/en/news/brenden-aaronson-we-wanted-three-points-today
+2026-01-04 09:26:54,416 [INFO] services.web_search: Fetched and extracted document from https://www.leedsunited.com/en/news/brenden-aaronson-we-wanted-three-points-today (words=365)
+2026-01-04 09:26:54,416 [INFO] services.web_search: Fetching URL: https://www.reddit.com/r/reddevils/comments/1q3r49y/post_match_thread_leeds_united_11_manchester/
+2026-01-04 09:26:54,804 [INFO] services.web_search: Fetched and extracted document from https://www.reddit.com/r/reddevils/comments/1q3r49y/post_match_thread_leeds_united_11_manchester/ (words=309)
+2026-01-04 09:26:54,804 [INFO] services.web_search: Fetching URL: https://thebusbybabe.sbnation.com/general/33395/player-ratings-manchester-united-1-1-leeds-united
+2026-01-04 09:26:55,222 [INFO] services.web_search: Fetched and extracted document from https://thebusbybabe.sbnation.com/general/33395/player-ratings-manchester-united-1-1-leeds-united (words=642)
+2026-01-04 09:26:55,222 [INFO] services.web_search: Total documents fetched this round: 6
+2026-01-04 09:26:55,225 [INFO] processing.text: Chunked 34 documents into 62 passages
+2026-01-04 09:26:55,235 [INFO] processing.text: Ranked 62 passages by relevance to the question
+2026-01-04 09:26:55,236 [INFO] processing.text: Selected 2 passages after deduplication and budgeting (chars=5499)
+2026-01-04 09:26:55,236 [INFO] agents.evaluator: Evaluating context sufficiency using Ollama (gemma3:latest)
+2026-01-04 09:26:55,236 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 09:27:00,484 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 09:27:00,485 [INFO] pipeline: Evaluation: The context provides the result of the Leeds vs Manchester United game (1-1), but doesn't state the date or time of the match. Therefore, it's not a 'latest result' as the game could have happened recently or in the past.
+2026-01-04 09:27:00,486 [INFO] pipeline: Reached maximum iterations (3); stopping search.
+2026-01-04 09:27:00,488 [INFO] agents.answerer: Building answer from 2 passages using Ollama (gemma3:latest)
+2026-01-04 09:27:00,488 [INFO] services.ollama_service: Calling Ollama chat with model: gemma3:latest
+2026-01-04 09:27:03,695 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-04 09:27:03,697 [INFO] pipeline: Pipeline finished.
